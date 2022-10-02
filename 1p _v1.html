@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drunk Lab</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="grid.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #24232b;
+      }
+      /* 字體統整 */
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif, generic-family;
+        line-height: 1.3;
+      }
+      a {
+        text-decoration: none;
+      }
+      .main-nav li a {
+        font-size: 1.8vw;
+        text-decoration: none;
+        color: #b59964;
+      }
+      .page_title {
+        margin-top: 3vw;
+        color: #c0b49c;
+      }
+      .page_title_main {
+        font-size: 4vw;
+      }
+      .page_title_note {
+        font-size: 1.8vw;
+      }
+      .ol_card_desc_txt {
+        color: #c0b49c;
+        font-size: 1vw;
+      }
+      .ol_card_desc_title {
+        color: #b59964;
+        font-size: 1.8vw;
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+      }
+      /* 字體統整 */
+      /* 影片控制 */
+      video {
+        pointer-events: none;
+      }
+      video::-webkit-media-controls-enclosure {
+        display: none;
+      }
+      /* 影片控制 */
+      /* 照片控制 */
+      img {
+        border-radius: 3%;
+      }
+      /* 照片控制 */
+      .header {
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 100px;
+        position: fixed;
+        z-index: 9999;
+        right: 0;
+        left: 0;
+      }
+      .logo img {
+        vertical-align: top;
+      }
+      .main-nav {
+        margin: 2vw 0px;
+      }
+      .main-nav li a {
+        margin-left: 30px;
+      }
+      #menu-switch {
+        display: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        .hb {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          position: relative;
+          margin-top: 10px;
+        }
+        .hb span {
+          display: block;
+          width: 30px;
+          height: 2px;
+          margin: 8px auto 0;
+          background-color: #b59964;
+        }
+        .main-nav {
+          position: absolute;
+          background-color: rgba(0, 0, 0, 0);
+          width: 100%;
+          left: -100%;
+          top: 100%;
+          opacity: 0;
+          transition: opacity 0.3s 0s, left 0s 0.3s;
+          margin: 0;
+        }
+        .main-nav a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+        }
+        .hb span:nth-child(1) {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 7px;
+          margin: auto;
+          transform: rotate(0deg);
+          transition: top 0.2s 0.2s, transform 0.2s 0s;
+        }
+        .hb span:nth-child(2) {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          transition: top 0.2s 0.2s, transform 0.2s 0s;
+        }
+        .hb span:nth-child(3) {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 31px;
+          margin: auto;
+          transform: rotate(0deg);
+          transition: top 0.2s 0.2s, transform 0.2s 0s;
+        }
+        #menu-switch:checked + .header .main-nav {
+          left: 0;
+          opacity: 0.9;
+          transition: opacity 0.2s;
+        }
+        #menu-switch:checked + .header .hb span:nth-child(2) {
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+        #menu-switch:checked + .header .hb span:nth-child(1) {
+          top: 19px;
+          transform: rotate(45deg);
+          transition: top 0.2s 0s, transform 0.2s 0.2s;
+        }
+        #menu-switch:checked + .header .hb span:nth-child(3) {
+          top: 19px;
+          transform: rotate(-45deg);
+          transition: top 0.2s 0s, transform 0.2s 0.2s;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .hb {
+          display: none;
+        }
+        .main-nav {
+          display: flex;
+          position: relative;
+          width: fit-content;
+          background-color: transparent;
+        }
+      }
+      .banner {
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      .video_p1 {
+        width: 100%;
+      }
+      .ol {
+        position: relative;
+        /* relative給dd圖 */
+        width: 80%;
+        margin: auto;
+      }
+      .ol_grid {
+        margin-top: 2vw;
+        height: 45vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        /* justify-items: center; */
+        padding: 0 3vw;
+      }
+      a {
+        height: 100%;
+      }
+      .ol_card {
+        margin: 0.2vw;
+        z-index: 2;
+      }
+      .ol_card1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 8;
+      }
+      .ol_card2 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 9;
+      }
+      .ol_card3 {
+        grid-column: 3 / 4;
+        grid-row: 3 / 10;
+      }
+      .ol_grid img {
+        display: block;
+        height: 80%;
+        border-radius: 5%;
+      }
+      .ol_card_desc {
+        height: 20%;
+        margin-top: 1vw;
+      }
+      .menu_btn {
+        position: fixed;
+        top: 30vw;
+        right: 8vw;
+        z-index: 8888;
+      }
+      .ol_dec_dd {
+        position: absolute;
+        float: left;
+        top: -6%;
+        left: 85%;
+      }
+      .dd {
+        width: 45%;
+      }
+      .ol_dec_wave {
+        position: absolute;
+        top: 30%;
+        margin: auto;
+      }
+      .wave {
+        width: 100%;
+      }
+
+      .yl {
+        width: 80%;
+        margin: auto;
+      }
+      .yl .page_title {
+        width: 100%;
+      }
+      .yl_grid {
+        display: grid;
+        height: 35vw;
+        grid-template-columns: 0.4fr 0.6fr;
+        margin-top: 2vw;
+        padding: 0 3vw;
+      }
+      .video_y1 {
+        grid-column: 1 / 2;
+      }
+      .video_yl video {
+        margin: auto;
+        height: 35vw;
+        border-radius: 3%;
+      }
+      .yl_step {
+        width: 90%;
+        height: 35vw;
+        overflow-y: auto;
+        grid-column: 2 / 3;
+      }
+      .test {
+        padding: 1vw;
+        color: #c0b49c;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .yl_btn {
+        margin: auto;
+        margin-top: 1vw;
+        padding: 0 3vw;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .yl_btn a {
+        text-decoration: none;
+        color: #b59964;
+        font-size: 1.8vw;
+      }
+      .yl_btn div {
+        width: 20vw;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .wo {
+        margin: auto;
+        width: 80%;
+      }
+      .wo_news {
+        padding: 2vw;
+      }
+      .wo_news img {
+        width: 40%;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="menu-switch" />
+    <nav class="header">
+      <h1 class="logo">
+        <a href=""
+          ><img
+            src="./album/other/Logo.png"
+            alt="Logo"
+            class="header_logo"
+            width="100px"
+        /></a>
+      </h1>
+      <label for="menu-switch" class="hb">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="main-nav">
+        <li><a href="#">Lab</a></li>
+        <li><a href="#">What's On</a></li>
+        <li><a href="#">Reserve</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">Membership</a></li>
+      </ul>
+    </nav>
+    <div class="banner">
+      <video
+        src="./album/vid/video_p1.mp4"
+        class="video_p1"
+        controls
+        autoplay
+        loop
+        muted
+      ></video>
+    </div>
+    <div class="ol">
+      <hgroup class="page_title">
+        <h2 class="page_title_main">Our Lab</h2>
+        <p class="page_title_note">Limited Time Offer</p>
+      </hgroup>
+
+      <section class="ol_grid">
+        <div class="ol_card ol_card1">
+          <a href="#">
+            <img
+              src="./album/our_lab/0summer_only.jpg"
+              alt="ol_img1"
+              class="ol_img1"
+            />
+            <hgroup class="ol_card_desc ol_card_desc1">
+              <p class="ol_card_desc_txt">2022/6 - 2022/9</p>
+              <h3 class="ol_card_desc_title">Summer Only<span>></span></h3>
+            </hgroup>
+          </a>
+        </div>
+        <div class="ol_card ol_card2">
+          <a href="#">
+            <img
+              src="./album/our_lab/0coffee_series.jpg"
+              alt="ol_img2"
+              class="ol_img2"
+            />
+            <hgroup class="ol_card_desc ol_card_desc2">
+              <p class="ol_card_desc_txt">2022/4 - 2022/10</p>
+              <h3 class="ol_card_desc_title">Coffee Series<span>></span></h3>
+            </hgroup>
+          </a>
+        </div>
+        <div class="ol_card ol_card3">
+          <a href="#">
+            <img
+              src="./album/our_lab/0classic_cocktail.jpg"
+              alt="ol_img3"
+              class="ol_img3"
+            />
+            <hgroup class="ol_card_desc ol_card_desc3">
+              <p class="ol_card_desc_txt">Always</p>
+              <h3 class="ol_card_desc_title">Class Cocktail<span>></span></h3>
+            </hgroup>
+          </a>
+        </div>
+      </section>
+      <div class="menu_btn">
+        <a href="#"
+          ><img
+            src="./album/other/Menu.png"
+            width="50px"
+            height="60px"
+            alt="menu"
+            class="menu_btn_p"
+        /></a>
+      </div>
+      <div class="ol_dec_dd">
+        <img src="./album/other/dd.png" alt="dd" class="dd" />
+      </div>
+      <div class="ol_dec_wave">
+        <img src="./album/other/wave.png" alt="wave" class="wave" />
+      </div>
+    </div>
+    <div class="yl">
+      <hgroup class="page_title">
+        <h2 class="page_title_main">Your Lab</h2>
+        <p class="page_title_note">Create Your Own Cocktail</p>
+      </hgroup>
+      <section class="yl_grid">
+        <div class="video_yl">
+          <video
+            src="./album/vid/video_lab.mp4"
+            controls
+            autoplay
+            loop
+            muted
+          ></video>
+        </div>
+        <div class="yl_step">
+          <p class="test">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa
+            accusamus maiores, ut commodi atque deserunt, ipsum provident odit
+            in alias modi expedita esse nemo itaque facilis maxime magnam
+            veritatis! Corrupti impedit suscipit incidunt, officiis quae commodi
+            velit atque officia quidem ea nisi fuga quis? A, sint! Quisquam
+            laboriosam aliquid nulla praesentium dolores perferendis veritatis,
+            autem aperiam. Debitis, est vitae. Dicta recusandae facilis adipisci
+            nisi numquam. Corrupti, ducimus nostrum quod, velit, fuga mollitia
+            maxime veritatis culpa hic doloremque unde facere quis ex eligendi
+            impedit! Fugiat laudantium ex aliquid iusto. Totam. Blanditiis
+            perferendis error porro non fugit maxime. Molestiae error magnam
+            corporis, necessitatibus aspernatur totam. Molestiae qui optio
+            debitis, magni fuga vero nostrum culpa natus iure minus totam
+            deserunt pariatur dicta. Suscipit amet aliquid provident temporibus
+            repellat voluptatum obcaecati natus. Itaque temporibus dignissimos
+            aperiam animi quos fugit voluptatem blanditiis saepe, inventore quam
+            magni ullam quis accusantium exercitationem id provident eaque at?
+            Qui ratione laboriosam explicabo consequuntur consectetur voluptate
+            aperiam, quaerat tenetur fugiat rerum ducimus consequatur quidem?
+            Qui fugiat consectetur deserunt provident quia laborum, sunt ratione
+            unde earum, eveniet ab error rem. Inventore optio aliquam dolorem,
+            est natus deleniti reprehenderit eligendi fugiat provident iure nisi
+            ullam tenetur deserunt fugit in dolorum. Possimus quod accusantium
+            quia maxime neque perspiciatis beatae quae minus magnam! Magnam,
+            explicabo praesentium modi nobis atque incidunt ullam vel quam
+            quisquam! Fugiat, assumenda vitae qui veritatis, exercitationem, non
+            iure laudantium magnam necessitatibus consectetur eaque incidunt
+            repellendus molestias? Ut, dicta blanditiis! Assumenda veritatis eos
+            ipsam tempore voluptate mollitia, debitis, expedita maxime accusamus
+            ut ab voluptatum fuga exercitationem corporis! Voluptates nulla
+            illo, expedita eaque corporis autem, dolor odio ratione totam
+            assumenda placeat! Praesentium quasi a autem fugiat rerum id
+            voluptatibus nihil odit perspiciatis? Nulla hic esse, aperiam
+            reiciendis similique animi voluptates perferendis autem quas
+            accusamus mollitia tenetur ipsa inventore porro corrupti voluptatem?
+            Sed possimus vitae delectus recusandae. Facilis dignissimos corrupti
+            animi placeat tempore, optio accusamus adipisci ducimus repellendus
+            velit ad atque numquam facere possimus voluptate. Architecto dolorem
+            ullam cumque, quibusdam exercitationem vitae. Esse ut aperiam vitae
+            quos quisquam sunt eligendi totam, atque facilis dignissimos
+            repellat autem amet rerum architecto obcaecati culpa ratione magni
+            nostrum laboriosam deleniti blanditiis at! Odit quas beatae eos!
+            Atque nostrum similique, deleniti tenetur voluptatibus est,
+            repellendus amet vitae veniam eum saepe maiores? Ut deserunt
+            reiciendis illum laborum error molestias deleniti nihil dolorum,
+            officiis nostrum nobis tempora eligendi! Exercitationem? Tempore
+            illo minima sunt, ea voluptatibus ducimus dolorem iusto ratione
+            cumque in fugit temporibus facere autem, recusandae ex ad, soluta
+            deleniti. Incidunt, non repellendus inventore natus sunt consequatur
+            mollitia quibusdam. Eos consequuntur beatae quos saepe provident
+            doloribus minima reiciendis, soluta culpa natus similique, suscipit
+            reprehenderit molestias quidem praesentium libero eum voluptatum, ea
+            impedit nobis! Repellat totam culpa accusantium? Ipsam, esse?
+          </p>
+        </div>
+      </section>
+      <div class="yl_btn">
+        <a href="#">
+          <div>Try now ! <span>></span></div>
+        </a>
+      </div>
+    </div>
+    <div class="wo">
+      <hgroup class="page_title">
+        <h2 class="page_title_main">What's On</h2>
+      </hgroup>
+      <section class="wo_news">
+        <article class="wo_news_art wo_news_art1">
+          <img src="./album/wo/0happy_hour.jpg" alt="0happy_hour.jpg" />
+        </article>
+        <article class="wo_news_art wo_news_art2">
+          <img
+            src="./album/wo/friday_night_live.jpg"
+            alt="friday_night_live.jpg"
+          />
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
