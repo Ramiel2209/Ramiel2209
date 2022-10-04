@@ -90,18 +90,27 @@
         left: 0;
         background-color: rgba(0, 0, 0, 0.6);
       }
+      h1 {
+        align-items: center;
+      }
       .logo img {
-        vertical-align: top;
-        width: 35%;
+        width: 45%;
       }
       .main-nav {
-        margin: 2vw 0px;
+        margin: 0.5vw 0px;
+        align-items: center;
+      }
+      .main-nav li img {
+        width: 2.5vw;
       }
       .main-nav li a {
-        margin-left: 30px;
+        margin-left: 4vw;
       }
       .main-nav a:hover {
         color: #6f4444;
+      }
+      .main-nav li img:hover {
+        transform: scale(1.1);
       }
       #menu-switch {
         display: none;
@@ -267,8 +276,8 @@
         z-index: 8888;
       }
       .menu_btn img {
-        width: 5.5vw;
-        height: 5.2vw;
+        width: 5vw;
+        height: 5vw;
       }
       .ol_dec_dd {
         position: absolute;
@@ -378,6 +387,7 @@
       }
       .wo_btn {
         margin-top: 3vw;
+        transition: 0.3s;
       }
       .wo_btn_rt {
         font-size: 2vw;
@@ -387,19 +397,20 @@
         padding: 1vw 2vw;
         text-align: center;
       }
+      .wo_btn:hover {
+        transform: scale(1.03);
+      }
 
       .rt {
         margin: auto;
         width: 80%;
       }
-      .rt_li {
+      .rt_container {
         display: flex;
       }
-      .rt li {
+      .rt_form input {
         display: inline-block;
         margin: 3vw 1vw 0;
-      }
-      .rt_ul input {
         width: 17vw;
         height: 3vw;
         font-size: 2vw;
@@ -408,13 +419,13 @@
         text-align: center;
         background-color: #24232b;
       }
-      .rt_ul input.rt_btn {
+      .rt_form input.rn_btn {
         width: 17vw;
         border-radius: 15vw;
         text-align: center;
         font-size: 2vw;
       }
-      .rt_ul input.rt_btn:hover {
+      .rt_form input.rn_btn:hover {
         background-color: #b59964;
         color: #24232b;
       }
@@ -514,7 +525,7 @@
     <input type="checkbox" name="" id="menu-switch" />
     <nav class="header">
       <h1 class="logo">
-        <a href=""
+        <a href="index.html"
           ><img
             src="./album/other/Logo.png"
             alt="Logo"
@@ -531,8 +542,12 @@
         <li><a href="#lab">Lab</a></li>
         <li><a href="#wo">What's On</a></li>
         <li><a href="#rt">Reserve</a></li>
-        <li><a href="#">Order</a></li>
-        <li><a href="#">Membership</a></li>
+        <li>
+          <a href="#"><img src="./album/other/user.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./album/other/shopping-cart.png" alt="" /></a>
+        </li>
       </ul>
     </nav>
     <div class="banner">
@@ -721,40 +736,31 @@
       <hgroup class="page_title">
         <h2 class="page_title_main">Reserve a Table</h2>
       </hgroup>
-      <div class="rt_li">
-        <div class="rt_ul">
-          <li>
-            <input
-              type="date"
-              value="Date >"
-              min="2022-10-01"
-              max="2023-12-31"
-            />
-          </li>
-          <li>
-            <input
-              type="time"
-              value="Time >"
-              min="15:00"
-              max="02:00"
-              step="30"
-            />
-          </li>
-          <li>
-            <input
-              type="number"
-              value="party size"
-              autocomplete="off"
-              class="layui-input"
-              max="10"
-              min="0"
-              id="txtPersonNumber"
-            />
-          </li>
-          <li>
-            <input type="submit" value="Reserve Now" class="rt_btn" />
-          </li>
-        </div>
+      <div class="rt_container">
+        <form class="rt_form">
+          <input
+            type="date"
+            value="Date >"
+            min="2022-10-01"
+            max="2023-12-31"
+            required
+          />
+
+          <input type="time" value="Time >" min="02:00" max="24:00" required />
+
+          <input
+            type="number"
+            value="party size"
+            autocomplete="off"
+            class="layui-input"
+            max="10"
+            min="0"
+            id="txtPersonNumber"
+            required
+          />
+
+          <input type="submit" value="Reserve Now" class="rn_btn" />
+        </form>
       </div>
     </div>
     <div class="map">
