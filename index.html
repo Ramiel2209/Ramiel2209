@@ -13,6 +13,7 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
       body {
         background-color: #24232b;
@@ -694,20 +695,23 @@
         <h2 class="page_title_main">What's On</h2>
       </hgroup>
       <section class="wo_news">
-        <article class="wo_news_art wo_news_art1">
-          <img
-            src="./album/wo/0happy_hour.jpg"
-            alt="0happy_hour.jpg"
-            class="wo_news_p"
-          />
-          <h4 class="wo_name">Happy Hour</h4>
-          <h3>20% off on all cocktails</h3>
-          <p>Monday to Thursday</p>
-          <p>5pm - 7pm</p>
-          <div class="wo_btn">
-            <a href="#rt" class="wo_btn_rt">Reserve a Table</a>
-          </div>
-        </article>
+        <div data-aos="fade-up">
+          <article class="wo_news_art wo_news_art1">
+            <img
+              src="./album/wo/0happy_hour.jpg"
+              alt="0happy_hour.jpg"
+              class="wo_news_p"
+            />
+            <h4 class="wo_name">Happy Hour</h4>
+            <h3>20% off on all cocktails</h3>
+            <p>Monday to Thursday</p>
+            <p>5pm - 7pm</p>
+            <div class="wo_btn">
+              <a href="#rt" class="wo_btn_rt">Reserve a Table</a>
+            </div>
+          </article>
+        </div>
+
         <div class="wo_gap">
           <img
             src="./album/wo/gap.png"
@@ -715,21 +719,23 @@
             class="wo_gap_p wo_news_p1"
           />
         </div>
-        <article class="wo_news_art wo_news_art2">
-          <img
-            src="./album/wo/friday_night_live.jpg"
-            alt="friday_night_live.jpg"
-            class="wo_news_p wo_news_p2"
-          />
-          <h4 class="wo_name">Friday Night Live</h4>
-          <h3>Justin Bryant</h3>
-          <p>October 23, 2022</p>
-          <p>8pm - 11pm</p>
-          <a name="rt" class="skip_rt"></a>
-          <div class="wo_btn">
-            <a href="#rt" class="wo_btn_rt">Reserve a Table</a>
-          </div>
-        </article>
+        <div data-aos="fade-up">
+          <article class="wo_news_art wo_news_art2">
+            <img
+              src="./album/wo/friday_night_live.jpg"
+              alt="friday_night_live.jpg"
+              class="wo_news_p wo_news_p2"
+            />
+            <h4 class="wo_name">Friday Night Live</h4>
+            <h3>Justin Bryant</h3>
+            <p>October 23, 2022</p>
+            <p>8pm - 11pm</p>
+            <a name="rt" class="skip_rt"></a>
+            <div class="wo_btn">
+              <a href="#rt" class="wo_btn_rt">Reserve a Table</a>
+            </div>
+          </article>
+        </div>
       </section>
     </div>
     <div class="rt">
@@ -811,5 +817,9 @@
         <img src="./album/other/footer.png" alt="footer.png" />
       </div>
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
