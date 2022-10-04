@@ -7,13 +7,89 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="main.css" />
-    <style></style>
+    <style>
+      .yl {
+        margin: auto;
+        margin-top: 7vw;
+        width: 80%;
+      }
+      .lab {
+        margin-top: 3vw;
+        display: grid;
+        grid-template-columns: 0.4fr 0.6fr;
+        grid-template-rows: 0.1fr 0.9fr;
+        width: 100%;
+        height: 35vw;
+      }
+      .lab_img {
+        box-shadow: 0 0 2vw #555;
+        background-color: #d3d3ca;
+        border-radius: 5%;
+        grid-column: 1/2;
+        grid-row: 1/3;
+      }
+      .lab_img img {
+        width: 100%;
+      }
+      .lab_nav {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .lab_nav_ul {
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+      }
+      .lab_nav_ul li {
+        color: #b59964;
+        border: #b59964 solid 2px;
+        border-radius: 2vw;
+        font-size: 2vw;
+        padding: 0.5vw 1vw;
+      }
+      .lab_nav_ul li:hover {
+        background-color: #b59964;
+        color: #24232b;
+      }
+      .lab_nav_ul li:nth-child(1) {
+        background-color: #b59964;
+        color: #24232b;
+      }
+      .lab_table {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .table_element {
+      }
+      .element_list {
+        height: 30vw;
+        overflow-y: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .table_element_img {
+        width: 16vw;
+        height: 16vw;
+      }
+      .table_element_img img {
+        width: 100%;
+      }
+      .table_element_img:hover img {
+        transform: scale(1.1);
+      }
+      .gap {
+        height: 10vw;
+      }
+    </style>
   </head>
   <body>
     <input type="checkbox" name="" id="menu-switch" />
     <nav class="header">
       <h1 class="logo">
-        <a href=""
+        <a href="index.html"
           ><img
             src="./album/other/Logo.png"
             alt="Logo"
@@ -38,7 +114,95 @@
         </li>
       </ul>
     </nav>
-    <div class="yl"></div>
+
+    <div class="yl">
+      <div class="yl_title">
+        <hgroup class="page_title">
+          <h2 class="page_title_main">Your Lab</h2>
+          <p class="page_title_note">Create Your Own Cocktail</p>
+        </hgroup>
+      </div>
+      <div class="lab">
+        <div class="lab_img">
+          <img src="./album/other/glass.png" alt="glass.png" />
+        </div>
+        <div class="lab_table">
+          <div class="lab_nav">
+            <ul class="lab_nav_ul">
+              <li>Classic</li>
+              <li>Flavor</li>
+              <li>Empty</li>
+              <li>Share</li>
+            </ul>
+          </div>
+          <div class="lab_element">
+            <div class="element_list">
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+              <div class="table_element_img">
+                <img src="./album/other/tequila_test.png" alt="tequila" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gap"></div>
     <div class="au">
       <hgroup class="page_title">
         <h2 class="page_title_main">About us</h2>
