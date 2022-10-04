@@ -8,54 +8,167 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="main.css" />
     <style>
-      .so_container {
-        margin-top: 7vw;
+      .main-nav li:nth-child(1) a {
+        color: #6f4444;
+        text-decoration: underline;
+      }
+      .ol_title {
+        margin-top: 8vw;
+      }
+      .ol_p1 {
         display: flex;
-        width: 45%;
-        padding: 4% 2%;
+        justify-content: space-around;
+      }
+      .content_left {
+        display: flex;
+        align-items: center;
+      }
+      .content_left_ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+      }
+      .content_left_ul li {
+        color: #b59964;
+        font-size: 2vw;
+        margin: 2vw;
+        border: #b59964 2px solid;
+        border-radius: 5vw;
+        padding: 0.5vw 1vw;
+        text-align: center;
+      }
+      .content_left_ul li:hover {
+        box-shadow: 0 0 1vw #555;
+      }
+      .content_left_ul a:nth-child(1) li {
+        color: #24232b;
+        background-color: #b59964;
+      }
+      .ol {
+        margin: auto;
+        width: 80%;
+      }
+      .ol_container {
+        /* margin-top: 3vw; */
+        display: flex;
+        width: 70%;
+        /* padding: 4% 2%; */
         box-sizing: border-box;
         height: 60vh;
       }
-      .so_container_box {
+      .ol_container_box {
         flex: 1;
         overflow: hidden;
         transition: 0.5s;
-        margin: 0 2%;
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        margin: 2vw 2% 2%;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
         line-height: 0;
         position: relative;
       }
-      .so_container_box article {
+      .ol_container_box article {
         height: 80%;
         width: 80%;
-        border: 1px red solid;
         line-height: 1.3;
         top: 10%;
         left: 10%;
         position: absolute;
+        text-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.3);
       }
-      .so_container_box > img {
+      .ac {
+        color: #24232b;
+        border: #b59964 solid 1px;
+        border-radius: 2.5vw;
+        background-color: #b59964;
+        font-size: 2vw;
+        height: 2.5vw;
+        padding: 0.3vw 1vw;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.3);
+      }
+      .ol_container_box > img {
         width: 200%;
         height: 100%;
         object-fit: cover;
         transition: 0.5s;
       }
-      .so_container_box > article {
+      .ol_container_box > article {
         display: none;
       }
-      .so_container_box:hover {
+      .ol_container_box:hover {
         flex: 1 1 50%;
       }
-      .so_container_box:hover > img {
+      .ol_container_box:hover > img {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 1);
-        filter: opacity(0.1);
+        filter: opacity(0.4);
       }
-      .so_container_box:hover > article {
+      .ol_container_box:hover > article {
         display: block;
 
         /* z-index: 1; */
+      }
+      .ywl {
+        width: 80%;
+        margin: auto;
+      }
+      .ywl_container {
+        width: 100%;
+        display: flex;
+      }
+      .ywl_row {
+        display: flex;
+      }
+      .ywl_column {
+      }
+      .ywl_column a {
+      }
+      .ywl_card {
+        padding: 1vw;
+        margin: 2vw;
+        display: flex;
+        position: relative;
+        backdrop-filter: blur(1vw);
+        box-shadow: 0 0 1vw #333;
+        border-radius: 5%;
+      }
+      .ywl_card:hover {
+        box-shadow: 0 0 1vw #555;
+      }
+      .ywl_card_item_img {
+        width: 14vw;
+        height: 14vw;
+        overflow: hidden;
+        border-radius: 5%;
+      }
+      .ywl_card_item img {
+        width: 14vw;
+        border-radius: 5%;
+        transition: 1.5s;
+      }
+      .ywl_card:hover img {
+        transform: scale(1.1);
+      }
+      .ywl_btn {
+        margin-top: 1vw;
+      }
+      .ywl_btn_ac:hover {
+        box-shadow: 0 0 1vw #777;
+      }
+      .ywl_btn_ac {
+        color: #24232b;
+        border: #b59964 solid 1px;
+        border-radius: 2.5vw;
+        background-color: #b59964;
+        font-size: 2vw;
+        height: 2.5vw;
+        padding: 0.3vw 1vw;
+        bottom: 0;
+        right: 0;
+        text-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.2);
+        margin-top: 2vw;
       }
     </style>
   </head>
@@ -77,37 +190,202 @@
         <span></span>
       </label>
       <ul class="main-nav">
-        <li><a href="#">Lab</a></li>
-        <li><a href="#">What's On</a></li>
-        <li><a href="#">Reserve</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#wo">What's On</a></li>
+        <li><a href="#rt">Reserve</a></li>
         <li><a href="#">Order</a></li>
         <li><a href="#">Membership</a></li>
       </ul>
     </nav>
-    <div class="so_container">
-      <div class="so_container_box">
-        <img src="./album/our_lab/0summer_only.jpg" />
-        <article>
-          <h3>name</h3>
-          <p>
-            txxxxxxxxxxt <br />
-            txxxxxxxxxxt <br />
-            txxxxxxxxxxt <br />
-            txxxxxxxxxxt <br />
-            txxxxxxxxxxt <br />
-            txxxxxxxxxxt <br />
-          </p>
-          <h4>price:$15</h4>
-          <a href="#">Add to Cart</a>
-        </article>
+    <div class="ol">
+      <div class="ol_title">
+        <hgroup class="page_title">
+          <h2 class="page_title_main">Our Lab</h2>
+          <p class="page_title_note">Limited Time Offer</p>
+        </hgroup>
       </div>
-      <div class="so_container_box">
-        <img src="./album/our_lab/1summer_only.jpg" />
-        <span>Image</span>
+      <div class="ol_p1">
+        <div class="content_left">
+          <ul class="content_left_ul">
+            <a href="#"><li>Summer Only</li></a>
+            <a href="#"><li>Coffee Series</li></a>
+            <a href="#"><li>Classic Cocktail</li></a>
+          </ul>
+        </div>
+        <div class="ol_container">
+          <div class="ol_container_box">
+            <img src="./album/our_lab/0summer_only.jpg" />
+            <article>
+              <h3>Name</h3>
+              <p>
+                Flavor : Pear. Honey <br />
+                Ingredient : txt<br />
+                Base : Tequila. Rum <br />
+                Story : txxxxxt <br />
+                txxxxxxxxxxt <br />
+                Limited Time : <br />
+                2022/6 - 2022/9
+              </p>
+              <h4>price:$15</h4>
+              <a href="#" class="ac">Add to Cart</a>
+            </article>
+          </div>
+          <div class="ol_container_box">
+            <img src="./album/our_lab/1summer_only.jpg" />
+            <article>
+              <h3>name</h3>
+              <p>
+                Flavor : Pear. Honey <br />
+                Ingredient : txt<br />
+                Base : Tequila. Rum <br />
+                Story : txxxxxt <br />
+                txxxxxxxxxxt <br />
+                Limited Time : <br />
+                2022/6 - 2022/9
+              </p>
+              <h4>price:$15</h4>
+              <a href="#" class="ac">Add to Cart</a>
+            </article>
+          </div>
+          <div class="ol_container_box">
+            <img src="./album/our_lab/2summer_only.jpg" />
+            <article>
+              <h3>name</h3>
+              <p>
+                Flavor : Pear. Honey <br />
+                Ingredient : txt<br />
+                Base : Tequila. Rum <br />
+                Story : txxxxxt <br />
+                txxxxxxxxxxt <br />
+                Limited Time : <br />
+                2022/6 - 2022/9
+              </p>
+              <h4>price:$15</h4>
+              <a href="#" class="ac">Add to Cart</a>
+            </article>
+          </div>
+          <div class="ol_container_box">
+            <img src="./album/our_lab/4summer_only.jpg" />
+            <article>
+              <h3>name</h3>
+              <p>
+                Flavor : Pear. Honey <br />
+                Ingredient : txt<br />
+                Base : Tequila. Rum <br />
+                Story : txxxxxt <br />
+                txxxxxxxxxxt <br />
+                Limited Time : <br />
+                2022/6 - 2022/9
+              </p>
+              <h4>price:$15</h4>
+              <a href="#" class="ac">Add to Cart</a>
+            </article>
+          </div>
+          <div class="ol_container_box">
+            <img src="./album/our_lab/5summer_only.jpg" />
+            <article>
+              <h3>name</h3>
+              <p>
+                Flavor : Pear. Honey <br />
+                Ingredient : txt<br />
+                Base : Tequila. Rum <br />
+                Story : txxxxxt <br />
+                txxxxxxxxxxt <br />
+                Limited Time : <br />
+                2022/6 - 2022/9
+              </p>
+              <h4>price:$15</h4>
+              <a href="#" class="ac">Add to Cart</a>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="so_container_box">
-        <img src="./album/our_lab/2summer_only.jpg" />
-        <span>Hover</span>
+    </div>
+    <div class="ywl">
+      <div class="ywl_title">
+        <hgroup class="page_title">
+          <h2 class="page_title_main">You Would Like</h2>
+        </hgroup>
+      </div>
+      <div class="ywl_container">
+        <div class="ywl_row">
+          <div class="ywl_col">
+            <a href="#">
+              <div class="ywl_card">
+                <div class="ywl_card_item">
+                  <div class="ywl_card_item_img">
+                    <img src="./album/ywl/ywl01.jpg" alt="ywl01" />
+                  </div>
+                  <div class="ywl_card_txt">
+                    <h3>name</h3>
+                    <p>Classic Cocktail</p>
+                    <h4>$13.99</h4>
+                  </div>
+                  <div class="ywl_btn">
+                    <a href="#" class="ywl_btn_ac">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="ywl_col">
+            <a href="#">
+              <div class="ywl_card">
+                <div class="ywl_card_item">
+                  <div class="ywl_card_item_img">
+                    <img src="./album/ywl/ywl02.jpg" alt="ywl02" />
+                  </div>
+                  <div class="ywl_card_txt">
+                    <h3>name</h3>
+                    <p>Classic Cocktail</p>
+                    <h4>$13.99</h4>
+                  </div>
+                  <div class="ywl_btn">
+                    <a href="#" class="ywl_btn_ac">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="ywl_col">
+            <a href="#">
+              <div class="ywl_card">
+                <div class="ywl_card_item">
+                  <div class="ywl_card_item_img">
+                    <img src="./album/ywl/ywl03.jpg" alt="ywl03" />
+                  </div>
+                  <div class="ywl_card_txt">
+                    <h3>name</h3>
+                    <p>Classic Cocktail</p>
+                    <h4>$13.99</h4>
+                  </div>
+                  <div class="ywl_btn">
+                    <a href="#" class="ywl_btn_ac">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="ywl_col">
+            <a href="#">
+              <div class="ywl_card">
+                <div class="ywl_card_item">
+                  <div class="ywl_card_item_img">
+                    <img src="./album/ywl/ywl04.jpg" alt="ywl04" />
+                  </div>
+                  <div class="ywl_card_txt">
+                    <h3>name</h3>
+                    <p>Classic Cocktail</p>
+                    <h4>$13.99</h4>
+                  </div>
+                  <div class="ywl_btn">
+                    <a href="#" class="ywl_btn_ac">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="au">
@@ -128,12 +406,10 @@
           </h4>
           <p class="au_grid22">email :</p>
           <div class="au_grid23">
-            <input type="text" />
+            <input type="email" />
           </div>
           <div class="au_grid24">
-            <div class="au_btn">
-              <a href="#" class="au_btn_ss">Subscribe</a>
-            </div>
+            <input type="submit" value="Subscribe" class="subscribe" />
           </div>
           <h4 class="au_grid31">Opening Hours</h4>
           <p class="au_grid32">

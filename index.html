@@ -100,6 +100,9 @@
       .main-nav li a {
         margin-left: 30px;
       }
+      .main-nav a:hover {
+        color: #6f4444;
+      }
       #menu-switch {
         display: none;
       }
@@ -225,6 +228,9 @@
         margin: 0.2vw;
         z-index: 2;
       }
+      .ol_card:hover img {
+        transform: scale(1.1);
+      }
       .ol_card1 {
         grid-column: 1 / 2;
         grid-row: 1 / 8;
@@ -237,10 +243,18 @@
         grid-column: 3 / 4;
         grid-row: 3 / 10;
       }
+      .ol_card_img {
+        width: 17vw;
+        height: 25.5vw;
+        overflow: hidden;
+        border-radius: 5%;
+      }
       .ol_grid img {
         display: block;
-        height: 80%;
+        height: 100%;
+
         border-radius: 5%;
+        transition: 1s;
       }
       .ol_card_desc {
         height: 20%;
@@ -253,8 +267,8 @@
         z-index: 8888;
       }
       .menu_btn img {
-        width: 6vw;
-        height: 6vw;
+        width: 5.5vw;
+        height: 5.2vw;
       }
       .ol_dec_dd {
         position: absolute;
@@ -378,30 +392,32 @@
         margin: auto;
         width: 80%;
       }
+      .rt_li {
+        display: flex;
+      }
       .rt li {
-        list-style: none;
         display: inline-block;
         margin: 3vw 1vw 0;
       }
       .rt_ul input {
         width: 17vw;
+        height: 3vw;
         font-size: 2vw;
         color: #b59964;
         border: #b59964 solid 1px;
         text-align: center;
         background-color: #24232b;
       }
-      .rt_btn {
+      .rt_ul input.rt_btn {
         width: 17vw;
-        background-color: #b59964;
         border-radius: 15vw;
         text-align: center;
-      }
-      .rt_btn a {
         font-size: 2vw;
+      }
+      .rt_ul input.rt_btn:hover {
+        background-color: #b59964;
         color: #24232b;
       }
-
       .map {
         margin-top: 9vw;
       }
@@ -481,26 +497,20 @@
         bottom: 0;
         right: 0;
       }
+      .subscribe {
+        color: #b59964;
+        border: #b59964 solid 1px;
+        background-color: #24232b;
+        font-size: 2vw;
+        padding: 0.5vw 1vw;
+      }
+      .subscribe:hover {
+        background-color: #b59964;
+        color: #24232b;
+      }
     </style>
   </head>
   <body>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <!-- pickadate.js v3.5.6 -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/classic.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/themes/classic.date.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/themes/classic.time.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.date.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.time.js"></script>
     <input type="checkbox" name="" id="menu-switch" />
     <nav class="header">
       <h1 class="logo">
@@ -518,9 +528,9 @@
         <span></span>
       </label>
       <ul class="main-nav">
-        <li><a href="#">Lab</a></li>
-        <li><a href="#">What's On</a></li>
-        <li><a href="#">Reserve</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#wo">What's On</a></li>
+        <li><a href="#rt">Reserve</a></li>
         <li><a href="#">Order</a></li>
         <li><a href="#">Membership</a></li>
       </ul>
@@ -534,6 +544,7 @@
         loop
         muted
       ></video>
+      <a name="lab" class="skip_lab"></a>
     </div>
     <div class="ol">
       <hgroup class="page_title">
@@ -544,11 +555,13 @@
       <section class="ol_grid">
         <div class="ol_card ol_card1">
           <a href="#">
-            <img
-              src="./album/our_lab/0summer_only.jpg"
-              alt="ol_img1"
-              class="ol_img1"
-            />
+            <div class="ol_card_img">
+              <img
+                src="./album/our_lab/0summer_only.jpg"
+                alt="ol_img1"
+                class="ol_img1"
+              />
+            </div>
             <hgroup class="ol_card_desc ol_card_desc1">
               <p class="ol_card_desc_txt">2022/6 - 2022/9</p>
               <h3 class="ol_card_desc_title">Summer Only<span>></span></h3>
@@ -557,11 +570,13 @@
         </div>
         <div class="ol_card ol_card2">
           <a href="#">
-            <img
-              src="./album/our_lab/0coffee_series.jpg"
-              alt="ol_img2"
-              class="ol_img2"
-            />
+            <div class="ol_card_img">
+              <img
+                src="./album/our_lab/0coffee_series.jpg"
+                alt="ol_img1"
+                class="ol_img1"
+              />
+            </div>
             <hgroup class="ol_card_desc ol_card_desc2">
               <p class="ol_card_desc_txt">2022/4 - 2022/10</p>
               <h3 class="ol_card_desc_title">Coffee Series<span>></span></h3>
@@ -570,11 +585,13 @@
         </div>
         <div class="ol_card ol_card3">
           <a href="#">
-            <img
-              src="./album/our_lab/0classic_cocktail.jpg"
-              alt="ol_img3"
-              class="ol_img3"
-            />
+            <div class="ol_card_img">
+              <img
+                src="./album/our_lab/0classic_cocktail.jpg"
+                alt="ol_img1"
+                class="ol_img1"
+              />
+            </div>
             <hgroup class="ol_card_desc ol_card_desc3">
               <p class="ol_card_desc_txt">Always</p>
               <h3 class="ol_card_desc_title">Class Cocktail<span>></span></h3>
@@ -615,60 +632,38 @@
           ></video>
         </div>
         <div class="yl_step">
-          <p class="test">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed culpa
-            accusamus maiores, ut commodi atque deserunt, ipsum provident odit
-            in alias modi expedita esse nemo itaque facilis maxime magnam
-            veritatis! Corrupti impedit suscipit incidunt, officiis quae commodi
-            velit atque officia quidem ea nisi fuga quis? A, sint! Quisquam
-            laboriosam aliquid nulla praesentium dolores perferendis veritatis,
-            autem aperiam. Debitis, est vitae. Dicta recusandae facilis adipisci
-            nisi numquam. Corrupti, ducimus nostrum quod, velit, fuga mollitia
-            maxime veritatis culpa hic doloremque unde facere quis ex eligendi
-            impedit! Fugiat laudantium ex aliquid iusto. Totam. Blanditiis
-            perferendis error porro non fugit maxime. Molestiae error magnam
-            corporis, necessitatibus aspernatur totam. Molestiae qui optio
-            debitis, magni fuga vero nostrum culpa natus iure minus totam
-            deserunt pariatur dicta. Suscipit amet aliquid provident temporibus
-            repellat voluptatum obcaecati natus. Itaque temporibus dignissimos
-            aperiam animi quos fugit voluptatem blanditiis saepe, inventore quam
-            magni ullam quis accusantium exercitationem id provident eaque at?
-            Qui ratione laboriosam explicabo consequuntur consectetur voluptate
-            aperiam, quaerat tenetur fugiat rerum ducimus consequatur quidem?
-            Qui fugiat consectetur deserunt provident quia laborum, sunt ratione
-            unde earum, eveniet ab error rem. Inventore optio aliquam dolorem,
-            est natus deleniti reprehenderit eligendi fugiat provident iure nisi
-            ullam tenetur deserunt fugit in dolorum. Possimus quod accusantium
-            quia maxime neque perspiciatis beatae quae minus magnam! Magnam,
-            explicabo praesentium modi nobis atque incidunt ullam vel quam
-            quisquam! Fugiat, assumenda vitae qui veritatis, exercitationem, non
-            iure laudantium magnam necessitatibus consectetur eaque incidunt
-            repellendus molestias? Ut, dicta blanditiis! Assumenda veritatis eos
-            ipsam tempore voluptate mollitia, debitis, expedita maxime accusamus
-            ut ab voluptatum fuga exercitationem corporis! Voluptates nulla
-            illo, expedita eaque corporis autem, dolor odio ratione totam
-            assumenda placeat! Praesentium quasi a autem fugiat rerum id
-            voluptatibus nihil odit perspiciatis? Nulla hic esse, aperiam
-            reiciendis similique animi voluptates perferendis autem quas
-            accusamus mollitia tenetur ipsa inventore porro corrupti voluptatem?
-            Sed possimus vitae delectus recusandae. Facilis dignissimos corrupti
-            animi placeat tempore, optio accusamus adipisci ducimus repellendus
-            velit ad atque numquam facere possimus voluptate. Architecto dolorem
-            ullam cumque, quibusdam exercitationem vitae. Esse ut aperiam vitae
-            quos quisquam sunt eligendi totam, atque facilis dignissimos
-            repellat autem amet rerum architecto obcaecati culpa ratione magni
-            nostrum laboriosam deleniti blanditiis at! Odit quas beatae eos!
-            Atque nostrum similique, deleniti tenetur voluptatibus est,
-            repellendus amet vitae veniam eum saepe maiores? Ut deserunt
-            reiciendis illum laborum error molestias deleniti nihil dolorum,
-            officiis nostrum nobis tempora eligendi! Exercitationem? Tempore
-            illo minima sunt, ea voluptatibus ducimus dolorem iusto ratione
-            cumque in fugit temporibus facere autem, recusandae ex ad, soluta
-            deleniti. Incidunt, non repellendus inventore natus sunt consequatur
-            mollitia quibusdam. Eos consequuntur beatae quos saepe provident
-            doloribus minima reiciendis, soluta culpa natus similique, suscipit
-            reprehenderit molestias quidem praesentium libero eum voluptatum, ea
-            impedit nobis! Repellat totam culpa accusantium? Ipsam, esse?
+          <h4>Step 1</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <br />Inventore beatae fugit id placeat quod. Porro fugit
+            voluptatibus, dolores amet sed obcaecati esse nisi corrupti
+            consectetur impedit officia reprehenderit pariatur accusamus. <br />
+            <br />
+          </p>
+          <h4>Step 2</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <br />Inventore beatae fugit id placeat quod. Porro fugit
+            voluptatibus, dolores amet sed obcaecati esse nisi corrupti
+            consectetur impedit officia reprehenderit pariatur accusamus. <br />
+            consectetur impedit officia reprehenderit pariatur accusamus.<br />
+            <br />
+          </p>
+          <h4>Step 3</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <br />Inventore beatae fugit id placeat quod. Porro fugit
+            voluptatibus, dolores amet sed obcaecati esse nisi corrupti
+            consectetur impedit officia reprehenderit pariatur accusamus. <br />
+            <br />
+          </p>
+          <h4>Step 4</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <br />Inventore beatae fugit id placeat quod. Porro fugit
+            voluptatibus, dolores amet sed obcaecati esse nisi corrupti
+            consectetur impedit officia reprehenderit pariatur accusamus. <br />
+            <br />
           </p>
         </div>
       </section>
@@ -676,6 +671,7 @@
         <a href="#">
           <div>Try now ! <span>></span></div>
         </a>
+        <a name="wo" class="skip_wo"></a>
       </div>
     </div>
     <div class="wo">
@@ -694,7 +690,7 @@
           <p>Monday to Thursday</p>
           <p>5pm - 7pm</p>
           <div class="wo_btn">
-            <a href="#" class="wo_btn_rt">Reserve a Table</a>
+            <a href="#rt" class="wo_btn_rt">Reserve a Table</a>
           </div>
         </article>
         <div class="wo_gap">
@@ -714,8 +710,9 @@
           <h3>Justin Bryant</h3>
           <p>October 23, 2022</p>
           <p>8pm - 11pm</p>
+          <a name="rt" class="skip_rt"></a>
           <div class="wo_btn">
-            <a href="#" class="wo_btn_rt">Reserve a Table</a>
+            <a href="#rt" class="wo_btn_rt">Reserve a Table</a>
           </div>
         </article>
       </section>
@@ -724,30 +721,40 @@
       <hgroup class="page_title">
         <h2 class="page_title_main">Reserve a Table</h2>
       </hgroup>
-      <div class="rt_ul">
-        <li>
-          <input type="text" class="date" value=" Date > " />
-          <script>
-            $(".date").pickadate();
-          </script>
-        </li>
-        <li>
-          <input type="text" class="time" value=" Time > " />
-          <script>
-            $(".time").pickatime();
-          </script>
-        </li>
-        <li>
-          <input type="text" class="people" value=" Party Size > " />
-          <script>
-            $(".people").picka();
-          </script>
-        </li>
-        <li>
-          <div class="rt_btn">
-            <a href="#">Reserve Now</a>
-          </div>
-        </li>
+      <div class="rt_li">
+        <div class="rt_ul">
+          <li>
+            <input
+              type="date"
+              value="Date >"
+              min="2022-10-01"
+              max="2023-12-31"
+            />
+          </li>
+          <li>
+            <input
+              type="time"
+              value="Time >"
+              min="15:00"
+              max="02:00"
+              step="30"
+            />
+          </li>
+          <li>
+            <input
+              type="number"
+              value="party size"
+              autocomplete="off"
+              class="layui-input"
+              max="10"
+              min="0"
+              id="txtPersonNumber"
+            />
+          </li>
+          <li>
+            <input type="submit" value="Reserve Now" class="rt_btn" />
+          </li>
+        </div>
       </div>
     </div>
     <div class="map">
@@ -779,12 +786,10 @@
           </h4>
           <p class="au_grid22">email :</p>
           <div class="au_grid23">
-            <input type="text" />
+            <input type="email" />
           </div>
           <div class="au_grid24">
-            <div class="au_btn">
-              <a href="#" class="au_btn_ss">Subscribe</a>
-            </div>
+            <input type="submit" value="Subscribe" class="subscribe" />
           </div>
           <h4 class="au_grid31">Opening Hours</h4>
           <p class="au_grid32">
@@ -800,23 +805,5 @@
         <img src="./album/other/footer.png" alt="footer.png" />
       </div>
     </div>
-    <!-- js -->
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <!-- pickadate.js v3.5.6 -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/themes/classic.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/themes/classic.date.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/themes/classic.time.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.date.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/compressed/picker.time.js"></script>
   </body>
 </html>
