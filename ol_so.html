@@ -7,200 +7,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="main.css" />
-    <style>
-      .main-nav li:nth-child(1) a {
-        color: #6f4444;
-        text-decoration: underline;
-      }
-      .ol_title {
-        margin-top: 8vw;
-      }
-      .ol_p1 {
-        display: flex;
-        justify-content: space-around;
-      }
-      .content_left {
-        display: flex;
-        align-items: center;
-      }
-      .content_left_ul {
-        display: flex;
-        flex-direction: column;
-        gap: 1vw;
-      }
-      .content_left_ul li {
-        color: #b59964;
-        font-size: 2vw;
-        margin: 2vw;
-        border: #b59964 2px solid;
-        border-radius: 5vw;
-        padding: 0.5vw 1vw;
-        text-align: center;
-      }
-      .content_left_ul li:hover {
-        box-shadow: 0 0 1vw #555;
-      }
-      .content_left_ul a:nth-child(1) li {
-        color: #24232b;
-        background-color: #b59964;
-      }
-      .ol {
-        margin: auto;
-        width: 80%;
-      }
-      .ol_container {
-        /* margin-top: 3vw; */
-        display: flex;
-        width: 70%;
-        /* padding: 4% 2%; */
-        box-sizing: border-box;
-        height: 60vh;
-      }
-      .ol_container_box {
-        flex: 1;
-        overflow: hidden;
-        transition: 0.5s;
-        margin: 2vw 2% 2%;
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-        line-height: 0;
-        position: relative;
-      }
-      .ol_container_box article {
-        height: 80%;
-        width: 80%;
-        line-height: 1.3;
-        top: 10%;
-        left: 10%;
-        position: absolute;
-        text-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.3);
-      }
-      .ac {
-        color: #24232b;
-        border: #b59964 solid 1px;
-        border-radius: 2.5vw;
-        background-color: #b59964;
-        font-size: 2vw;
-        height: 2.5vw;
-        padding: 0.3vw 1vw;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        text-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.3);
-      }
-      .ol_container_box > img {
-        width: 200%;
-        height: 100%;
-        object-fit: cover;
-        transition: 0.5s;
-      }
-      .ol_container_box > article {
-        display: none;
-      }
-      .ol_container_box:hover {
-        flex: 1 1 50%;
-      }
-      .ol_container_box:hover > img {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 1);
-        filter: opacity(0.4);
-      }
-      .ol_container_box:hover > article {
-        display: block;
-
-        /* z-index: 1; */
-      }
-      .ywl {
-        width: 80%;
-        margin: auto;
-      }
-      .ywl_container {
-        width: 100%;
-        display: flex;
-      }
-      .ywl_row {
-        display: flex;
-      }
-      .ywl_column {
-      }
-      .ywl_column a {
-      }
-      .ywl_card {
-        padding: 1vw;
-        margin: 2vw;
-        display: flex;
-        position: relative;
-        backdrop-filter: blur(1vw);
-        box-shadow: 0 0 1vw #333;
-        border-radius: 5%;
-      }
-      .ywl_card:hover {
-        box-shadow: 0 0 1vw #555;
-      }
-      .ywl_card_item_img {
-        width: 14vw;
-        height: 14vw;
-        overflow: hidden;
-        border-radius: 5%;
-      }
-      .ywl_card_item img {
-        width: 14vw;
-        border-radius: 5%;
-        transition: 1.5s;
-      }
-      .ywl_card:hover img {
-        transform: scale(1.1);
-      }
-      .ywl_btn {
-        margin-top: 1vw;
-      }
-      .ywl_btn_ac:hover {
-        box-shadow: 0 0 1vw #777;
-      }
-      .ywl_btn_ac {
-        color: #24232b;
-        border: #b59964 solid 1px;
-        border-radius: 2.5vw;
-        background-color: #b59964;
-        font-size: 2vw;
-        height: 2.5vw;
-        padding: 0.3vw 1vw;
-        bottom: 0;
-        right: 0;
-        text-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.2);
-        margin-top: 2vw;
-      }
-    </style>
+    <link rel="stylesheet" href="ol.css" />
   </head>
   <body>
-    <input type="checkbox" name="" id="menu-switch" />
+    <input type="checkbox" id="menu-switch" />
     <nav class="header">
-      <h1 class="logo">
-        <a href="index.html"
-          ><img
-            src="./album/other/Logo.png"
-            alt="Logo"
-            class="header_logo"
-            width="100px"
-        /></a>
-      </h1>
+      <div class="logo">
+        <a href="index.html"><h1>Drunk Lab Cocktail Bar</h1></a>
+      </div>
       <label for="menu-switch" class="hb">
         <span></span>
         <span></span>
         <span></span>
       </label>
       <ul class="main-nav">
-        <li><a href="#lab">Lab</a></li>
-        <li><a href="#wo">What's On</a></li>
-        <li><a href="#rt">Reserve</a></li>
+        <li><a href="#">Lab</a></li>
+        <li><a href="#">What's On</a></li>
+        <li><a href="#">Reserve</a></li>
+
         <li>
-          <a href="#"><img src="./album/other/user.png" alt="" /></a>
+          <a href="#"><img src="./album/other/user.png" alt="" /> </a>
         </li>
         <li>
-          <a href="#"><img src="./album/other/shopping-cart.png" alt="" /></a>
+          <a href="#">
+            <img src="./album/other/shopping-cart.png" alt="" />
+          </a>
         </li>
       </ul>
     </nav>
+
     <div class="ol">
       <div class="ol_title">
         <hgroup class="page_title">
@@ -392,39 +227,46 @@
         </div>
       </div>
     </div>
-    <div class="au">
-      <hgroup class="page_title">
+
+    <div class="au page_container">
+      <hgroup>
         <h2 class="page_title_main">About us</h2>
       </hgroup>
-      <section class="au_imf">
-        <article class="au_grid">
-          <h4 class="au_grid11">Contact</h4>
-          <p class="au_grid12">123-456-789 drunklab@gmail.com</p>
-          <h4 class="au_grid13">Stay Connected</h4>
-          <div class="au_grid14">
-            <img src="./album/other/sc.png" alt="sc.png" />
+      <article class="au_imf">
+        <div class="au_imf_txt">
+          <h4>Contact</h4>
+          <p>
+            123-456-789 <br />
+            drunklab@gmail.com
+          </p>
+          <div class="au_sm">
+            <a href="#">
+              <img src="./album/other/sc.png" alt="sc.png" />
+            </a>
           </div>
-          <h4 class="au_grid21">
-            Join the Club &<br />
+        </div>
+
+        <div class="au_imf_txt">
+          <h4>
+            Join the Club & <br />
             Get Updates on Special Events
           </h4>
-          <p class="au_grid22">email :</p>
-          <div class="au_grid23">
-            <input type="email" />
-          </div>
-          <div class="au_grid24">
-            <input type="submit" value="Subscribe" class="subscribe" />
-          </div>
-          <h4 class="au_grid31">Opening Hours</h4>
-          <p class="au_grid32">
+          <form action="">
+            <input type="email" placeholder="Type Your Email Here" />
+            <input type="submit" value="Subscribe" class="rn_btn" />
+          </form>
+        </div>
+        <div class="au_imf_txt">
+          <h4>Opening Hours</h4>
+          <p>
             Sun - Thu : 4pm-1am <br />
-            Fri - Sun : 3pm - 2am
+            Fri - Sun : 3pm - 2am <br />
+            &nbsp; <br />
+            999 Terry Francois <br />
+            St. San Francisco, CA 12345
           </p>
-          <p class="au_grid33">
-            999 Terry Francois St. San Francisco, CA 12345
-          </p>
-        </article>
-      </section>
+        </div>
+      </article>
       <div class="au_footer">
         <img src="./album/other/footer.png" alt="footer.png" />
       </div>

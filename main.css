@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
 }
@@ -52,6 +57,7 @@ img {
   right: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
+  /* width: 100%; */
 }
 
 h1 {
@@ -78,7 +84,7 @@ h1 {
   transition: 0.3s;
 }
 .main-nav a:hover {
-  color: #6f4444;
+  color: #8a0f3a;
 }
 .main-nav a img:hover {
   transform: scale(1.1);
@@ -93,17 +99,17 @@ h1 {
   }
   .hb {
     width: 4rem;
-    height: 4rem;
+    height: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }
   .hb span {
     display: block;
-    width: 3rem;
+    width: 4rem;
     height: 2px;
     margin: 8px auto 0;
     background-color: #b59964;
@@ -123,6 +129,7 @@ h1 {
     padding: 10px;
     text-decoration: none;
   }
+
   .main-nav img {
     display: none;
   }
@@ -139,7 +146,7 @@ h1 {
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: -8px;
     bottom: 0;
     margin: auto;
     transition: top 0.2s 0.2s, transform 0.2s 0s;
@@ -172,13 +179,6 @@ h1 {
     transform: rotate(-45deg);
     transition: top 0.2s 0s, transform 0.2s 0.2s;
   }
-  .banner {
-    overflow: hidden;
-  }
-  .video_p1 {
-    position: relative;
-    right: 50rem;
-  }
 }
 @media screen and (min-width: 769px) {
   .hb {
@@ -192,133 +192,50 @@ h1 {
   }
 }
 
-/* banner */
-.banner {
-  width: 100%;
-  background-color: #000;
-}
-.video_p1 {
-  height: 100vh;
+.au {
   margin: auto;
-  display: flex;
-}
-
-/* 頁面控制 */
-.page_container {
-  width: 80%;
-  margin: auto;
-  margin-top: 5vw;
-}
-
-/* ol */
-.ol {
   position: relative;
-  /* relative給dd圖 */
 }
-.ol_grid {
-  margin-top: 2vw;
-  height: 45vw;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(9, 1fr);
-  /* justify-items: center; */
-  padding: 0 3vw;
+.au_imf {
+  margin-top: 3vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 5vw;
 }
-a {
-  height: 100%;
-}
-.ol_card {
-  margin: 2rem;
+.au_imf_txt {
+  width: 25%;
+  margin: 0 3%;
   z-index: 2;
 }
-.ol_card:hover img {
-  transform: scale(1.1);
+.au_imf_txt h4 {
+  margin-bottom: 1vw;
 }
-.ol_card:nth-child(1) {
-  grid-column: 1 / 2;
-  grid-row: 1 / 8;
-}
-.ol_card:nth-child(2) {
-  grid-column: 2 / 3;
-  grid-row: 2 / 9;
-}
-.ol_card:nth-child(3) {
-  grid-column: 3 / 4;
-  grid-row: 3 / 10;
-}
-.ol_card_img {
-  width: 16vw;
-  height: 24vw;
-  overflow: hidden;
-  border-radius: 5%;
-}
-.ol_grid img {
-  display: block;
-  height: 100%;
-  border-radius: 5%;
-  transition: 1s;
-}
-.ol_card hgroup {
-  height: 20%;
+.au_sm img {
   margin-top: 1vw;
+  width: 70%;
+}
+.au_imf input {
+  background-color: #24232b;
   color: #c0b49c;
+  border: #b59964 1px solid;
+  font-size: 2.5em;
+  display: block;
+  margin-bottom: 1vw;
 }
-.ol_card h3 {
-  color: #b59964;
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
+.au_email {
+  width: 90%;
+  height: 4rem;
+  line-height: 2.5rem;
 }
-.dd {
+.au_footer img {
+  width: 25%;
   position: absolute;
-  margin-top: -3vw;
-  left: 55vw;
-}
-.dd_p {
-  width: 45%;
-}
-.wave {
-  position: absolute;
-  top: 30%;
-  margin: auto;
-}
-.wave_p {
-  width: 100%;
+  bottom: 0;
+  right: 17%;
 }
 
-/* yl */
-.yl .page_title {
-  width: 100%;
-}
-.yl_col {
-  display: flex;
-  height: 70vh;
-  margin-top: 2vw;
-  padding: 0 3vw;
-  position: relative;
-}
-.video_yl {
-  height: 70vh;
-}
-.video_yl video {
-  height: 100%;
-  border-radius: 3%;
-}
-.yl_step {
-  height: 58vh;
-  padding: 0 3vw;
-  overflow-y: auto;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-.yl_btn {
-  margin: auto;
-  display: flex;
-  position: absolute;
-  right: 10vw;
-  bottom: 1vh;
-}
+/* 按鈕 */
 .btn a {
   color: #b59964;
   border: #b59964 solid 2px;
@@ -330,118 +247,93 @@ a {
   color: #24232b;
   background-color: #b59964;
 }
-
-.wo_news {
-  margin-top: 2vw;
-  padding: 0 3vw;
-  line-height: 2;
-}
-.wo_news_art {
-  margin: auto;
-  width: 100%;
-}
-.wo_news_art img {
-  margin: auto;
-  width: 40%;
-  float: left;
-  margin-right: 6vw;
-}
-.wo_news_art2 img {
-  float: right;
-  margin-right: 0;
-  margin-left: 6vw;
-}
-.wo_news_art2 {
-  text-align: right;
-}
-.wo_news_art h4 {
-  padding-top: 2vw;
-}
-.wo_gap img {
-  width: 90%;
-  margin: 4vw;
-}
-.wo_btn {
-  margin-top: 1.5vw;
-}
-
-.rt {
-  padding: 4vw 0;
-  background-image: url(./album/other/bgi_stone.jpg);
-  width: 100%;
-  height: 14vw;
-}
-.rt_row {
-  margin: auto;
-  width: 80%;
-}
-.rt_container {
-  display: flex;
-}
-.rt_form input {
-  display: inline-block;
-  margin: 3vw 1vw 0;
-  width: 17vw;
-  height: 3vw;
-  font-size: 2vw;
-  color: #b59964;
-  border: #b59964 solid 1px;
-  text-align: center;
-  background-color: #24232b;
-}
 .rn_btn {
   padding: 0.5vw 1vw;
   border-radius: 15vw;
   color: #b59964;
   border: #b59964 solid 1px;
   background-color: #24232b;
-  font-size: 2vw;
+  display: flex;
+  align-items: center;
 }
 .rn_btn:hover {
   background-color: #b59964;
   color: #24232b;
 }
 
-.map {
-  width: 100%;
-  margin-top: 9vw;
+/* 頁面控制 */
+.page_container {
+  width: 80%;
+  margin: auto;
+  margin-top: 5vw;
 }
 
-.au {
-  margin: auto;
+/* 液體按鈕 */
+.btn_lq {
   position: relative;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
+  padding: 16px 24px;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 40px;
+  text-align: center;
+  margin-top: 2vh;
 }
-.au_imf {
-  margin-top: 3vw;
-  display: flex;
-  flex-wrap: wrap;
-}
-.au_imf_txt {
-  margin: 0 4vw;
-  z-index: 2;
-}
-.au_imf_txt h4 {
-  margin-bottom: 1vw;
-}
-.au_sm img {
-  margin-top: 1vw;
-  width: 70%;
-}
-.au_imf input {
-  /* height: 60%; */
-  /* width: 80%; */
-  background-color: #24232b;
-  color: #c0b49c;
-  border: #b59964 1px solid;
-  font-size: 2.5em;
+
+.btn_lq span {
   display: block;
-  margin-bottom: 1vw;
+  position: relative;
+  color: #c0b49c;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  z-index: 1;
+  line-height: 2rem;
 }
-.au_footer img {
-  width: 25%;
+
+.btn_lq .liquid {
   position: absolute;
-  bottom: 0;
-  right: 20%;
+  top: -80px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, #d00049 0%, #8a0f3a 70%);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.btn_lq .liquid::after,
+.btn_lq .liquid::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #8a0f3a;
+}
+
+.btn_lq .liquid::before {
+  border-radius: 45%;
+  background: rgba(36, 35, 43, 1);
+  animation: animate 5s linear infinite;
+}
+
+.btn_lq .liquid::after {
+  border-radius: 40%;
+  background: rgba(36, 35, 43, 0.5);
+  animation: animate 10s linear infinite;
+}
+
+.btn_lq:hover .liquid {
+  top: -120px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
 }
