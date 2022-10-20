@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="drop.css" />
     <link rel="stylesheet" href="sm.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
@@ -24,15 +23,17 @@
         <span></span>
       </label>
       <ul class="main-nav">
-        <li><a href="#">Lab</a></li>
-        <li><a href="#">What's On</a></li>
-        <li><a href="#">Reserve</a></li>
         <li>
-          <a href="#"><img src="./album/other/user.png" alt="" /> </a>
+          <a href="lab.html">Lab</a>
+        </li>
+        <li><a href="what's_on.html">What's On</a></li>
+        <li><a href="reserve.html">Reserve</a></li>
+        <li>
+          <a href="#"><img src="./album/other/user.png" alt="user.png" /> </a>
         </li>
         <li>
           <a href="#">
-            <img src="./album/other/shopping-cart.png" alt="" />
+            <img src="./album/other/shopping-cart.png" alt="cart.png" />
           </a>
         </li>
       </ul>
@@ -86,6 +87,51 @@
             <hgroup>
               <p>2022/4 - 2022/10</p>
               <h4>Coffee Series<span>></span></h4>
+            </hgroup>
+          </a>
+        </div>
+        <div class="ol_card">
+          <a href="#">
+            <div class="ol_card_img">
+              <img
+                src="./album/our_lab/0classic_cocktail.jpg"
+                alt="ol_img1"
+                class="ol_img1"
+              />
+            </div>
+            <hgroup>
+              <p>Always</p>
+              <h4>Classic Cocktail<span>></span></h4>
+            </hgroup>
+          </a>
+        </div>
+        <div class="ol_card">
+          <a href="#">
+            <div class="ol_card_img">
+              <img
+                src="./album/our_lab/0classic_cocktail.jpg"
+                alt="ol_img1"
+                class="ol_img1"
+              />
+            </div>
+            <hgroup>
+              <p>Always</p>
+              <h4>Classic Cocktail<span>></span></h4>
+            </hgroup>
+          </a>
+        </div>
+        <div class="ol_card">
+          <a href="#">
+            <div class="ol_card_img">
+              <img
+                src="./album/our_lab/0classic_cocktail.jpg"
+                alt="ol_img1"
+                class="ol_img1"
+              />
+            </div>
+            <hgroup>
+              <p>Always</p>
+              <h4>Classic Cocktail<span>></span></h4>
             </hgroup>
           </a>
         </div>
@@ -182,7 +228,7 @@
             </p>
           </div>
           <div class="yl_btn">
-            <a href="#" class="btn_lq">
+            <a href="yl.html" class="btn_lq">
               <span>Try Now !</span>
               <div class="liquid"></div>
             </a>
@@ -201,11 +247,11 @@
             <img src="./album/wo/0happy_hour.jpg" alt="0happy_hour.jpg" />
             <section>
               <h4>Happy Hour</h4>
-              <h3>20% off on all cocktails</h3>
+              <h3>20% off on All Cocktails</h3>
               <p>Monday to Thursday</p>
               <p>5pm - 7pm</p>
               <div class="wo_btn">
-                <a href="#" class="btn_lq">
+                <a href="what's_on.html" class="btn_lq">
                   <span>More News !</span>
                   <div class="liquid"></div>
                 </a>
@@ -224,12 +270,12 @@
               alt="friday_night_live.jpg"
             />
             <section>
-              <h4>Friday Night Live</h4>
-              <h3>Justin Bryant adfjsjfdjso</h3>
+              <h4>Justin Bryant</h4>
+              <h3>Friday Night Live</h3>
               <p>October 23, 2022</p>
               <p>8pm - 11pm</p>
               <div class="wo_btn">
-                <a href="#" class="btn_lq">
+                <a href="what's_on.html" class="btn_lq">
                   <span>More News !</span>
                   <div class="liquid"></div>
                 </a>
@@ -238,12 +284,6 @@
           </article>
         </div>
       </section>
-      <!-- <div class="wo_btn">
-        <a href="#" class="btn_lq">
-          <span>More News !</span>
-          <div class="liquid"></div>
-        </a>
-      </div> -->
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -253,43 +293,46 @@
     <div class="rt page_container">
       <div class="rt_row">
         <hgroup class="page_title">
-          <h2>Reserve a Table</h2>
+          <h2>Reserve</h2>
         </hgroup>
         <div class="rt_container">
           <form class="rt_form">
-            <input
-              type="date"
-              value="2022-10-15"
-              min="2022-10-15"
-              max="2023-12-31"
-              required
-            />
+            <section class="input">
+              <input
+                type="date"
+                value="2022-10-15"
+                min="2022-10-15"
+                max="2023-12-31"
+                required
+              />
 
-            <input
-              type="time"
-              value="Date >"
-              min="02:00"
-              max="24:00"
-              required
-            />
+              <input
+                type="time"
+                value="Date >"
+                min="02:00"
+                max="24:00"
+                required
+              />
 
-            <select>
-              <option value="1" selected="selected">Party size</option>
-              <option value="2">1 Person</option>
-              <option value="3">2 People</option>
-              <option value="4">3 People</option>
-              <option value="5">4 People</option>
-              <option value="6">5 People</option>
-              <option value="7">6 People</option>
-              <option value="8">7 People</option>
-              <option value="9">8 People</option>
-              <option value="10">9 People</option>
-              <option value="11">10 People</option>
-              <option value="12">11 People</option>
-              <option value="13">12 People</option>
-            </select>
-
-            <input type="submit" value="Reserve Now" class="rn_btn" />
+              <select>
+                <option value="1" selected="selected">Party size</option>
+                <option value="2">1 Person</option>
+                <option value="3">2 People</option>
+                <option value="4">3 People</option>
+                <option value="5">4 People</option>
+                <option value="6">5 People</option>
+                <option value="7">6 People</option>
+                <option value="8">7 People</option>
+                <option value="9">8 People</option>
+                <option value="10">9 People</option>
+                <option value="11">10 People</option>
+                <option value="12">11 People</option>
+                <option value="13">12 People</option>
+              </select>
+            </section>
+            <div class="rt_sub">
+              <input type="submit" value="Reserve Now" class="ybtn" />
+            </div>
           </form>
         </div>
       </div>
@@ -315,7 +358,7 @@
         <div class="au_imf_txt">
           <h4>Contact</h4>
           <p>
-            123-456-789 <br />
+            <a>123-456-789 <br /></a>
             drunklab@gmail.com
           </p>
           <div class="au_sm">
@@ -326,13 +369,10 @@
         </div>
 
         <div class="au_imf_txt">
-          <h4>
-            Join the Club & <br />
-            Get Updates on Special Events
-          </h4>
+          <h4>Get Updates on Special Events</h4>
           <form>
             <input type="email" placeholder=" Your Email" class="au_email" />
-            <input type="submit" value="Subscribe" class="rn_btn" />
+            <input type="submit" value="Subscribe" class="ybtn" />
           </form>
         </div>
         <div class="au_imf_txt">

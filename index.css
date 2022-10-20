@@ -32,8 +32,22 @@ a {
   margin: 2rem;
   z-index: 2;
 }
+.ol_card:nth-child(n + 4):nth-child(-n + 6) {
+  display: none;
+}
 .ol_card:hover img {
   transform: scale(1.1);
+}
+.ol_card:hover h4 {
+  color: #8a0f3a;
+  animation-name: cardh4;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes cardh4 {
+  100% {
+    color: #8a0f3a;
+  }
 }
 .ol_card:nth-child(1) {
   grid-column: 1 / 2;
@@ -72,11 +86,11 @@ a {
 }
 .dd {
   position: absolute;
-  margin-top: -5vw;
+  margin-top: -6rem;
   left: 55vw;
 }
 .dd_p {
-  width: 45%;
+  width: 40%;
 }
 .wave {
   position: absolute;
@@ -93,20 +107,23 @@ a {
 }
 .yl_col {
   display: flex;
-  height: 70vh;
+  height: 60vh;
   margin-top: 2vw;
   padding: 0 3vw;
-  position: relative;
 }
 .video_yl {
-  height: 70vh;
+  width: 30%;
+}
+.yl_container {
+  width: 70%;
 }
 .video_yl video {
   height: 100%;
   border-radius: 3%;
 }
+
 .yl_step {
-  height: 58vh;
+  height: 80%;
   padding: 0 3vw;
   overflow-y: auto;
 }
@@ -116,6 +133,7 @@ a {
 .yl_btn {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin: 3vh 5vw 0 0;
 }
 
@@ -141,6 +159,9 @@ a {
 .wo_news_art2 {
   text-align: right;
 }
+.wo_news_art h3 {
+  color: #b59964;
+}
 .wo_news_art h4 {
   padding-top: 2vw;
 }
@@ -155,6 +176,7 @@ a {
 .wo_news_art2 .wo_btn {
   justify-content: flex-end;
 }
+
 .rt {
   padding: 4vw 0;
   background-image: url(./album/other/bgi_stone.jpg);
@@ -164,16 +186,20 @@ a {
   margin: auto;
   width: 80%;
 }
-.rt_container {
+.rt_form section {
   display: flex;
+  justify-content: space-around;
+}
+.rt_sub {
+  text-align: end;
 }
 .rt_form input {
   display: inline-block;
-  margin: 3vw 1vw 0;
-  width: 17vw;
-  height: 3vw;
+  width: 25%;
+  height: 4rem;
+  margin-top: 3rem;
   line-height: 2.5rem;
-  font-size: 2.5rem;
+  font-size: 2vw;
   color: #b59964;
   border: #b59964 solid 1px;
   text-align: center;
@@ -181,16 +207,21 @@ a {
 }
 .rt_form select {
   display: inline-block;
-  margin: 3vw 1vw 0;
-  width: 17vw;
-  height: 3vw;
-  font-size: 2.5rem;
+  width: 25%;
+  height: 4rem;
+  margin-top: 3rem;
+  font-size: 2vw;
   color: #b59964;
   border: #b59964 solid 1px;
   text-align: center;
   background-color: #24232b;
 }
-
+.rt_sub {
+  margin-top: 1rem;
+}
+.rt_sub input {
+  width: 20%;
+}
 .map {
   width: 100%;
   margin-top: 9vw;

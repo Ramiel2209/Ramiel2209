@@ -70,25 +70,47 @@ h1 {
 }
 
 .main-nav {
-  margin: 0.5vw 0;
   align-items: center;
 }
-
 .main-nav a {
   font-size: 2.5rem;
-  margin-left: 4vw;
+  margin-left: 3.5rem;
   color: #b59964;
+
+  position: relative;
 }
 .main-nav a img {
-  width: 1.7vw;
+  width: 2rem;
   transition: 0.3s;
 }
 .main-nav a:hover {
   color: #8a0f3a;
 }
 .main-nav a img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
+
+.main-nav li:nth-child(n):nth-child(-n + 3) a::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: -0.5rem;
+  background: #8a0f3a;
+  transition: all 0.5s ease;
+}
+
+.main-nav li:nth-child(n):nth-child(-n + 3) a:hover:before {
+  width: 100%;
+}
+
+/* .popover p {
+  padding: 50px;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 1s;
+} */
+
 #menu-switch {
   display: none;
 }
@@ -137,7 +159,7 @@ h1 {
     position: absolute;
     left: 0;
     right: 0;
-    top: 7px;
+    top: 10px;
     margin: auto;
     transform: rotate(0deg);
     transition: top 0.2s 0.2s, transform 0.2s 0s;
@@ -146,7 +168,7 @@ h1 {
     position: absolute;
     left: 0;
     right: 0;
-    top: -8px;
+    top: 0;
     bottom: 0;
     margin: auto;
     transition: top 0.2s 0.2s, transform 0.2s 0s;
@@ -155,7 +177,7 @@ h1 {
     position: absolute;
     left: 0;
     right: 0;
-    top: 31px;
+    top: 34px;
     margin: auto;
     transform: rotate(0deg);
     transition: top 0.2s 0.2s, transform 0.2s 0s;
@@ -209,7 +231,7 @@ h1 {
   z-index: 2;
 }
 .au_imf_txt h4 {
-  margin-bottom: 1vw;
+  margin-bottom: 2vw;
 }
 .au_sm img {
   margin-top: 1vw;
@@ -236,36 +258,23 @@ h1 {
 }
 
 /* 按鈕 */
-.btn a {
+.ybtn {
   color: #b59964;
   border: #b59964 solid 2px;
-  border-radius: 5vw;
+  border-radius: 5rem;
   font-size: 2.5rem;
-  padding: 0.5vw 1vw;
+  padding: 0.5rem 1rem;
 }
-.btn a:hover {
+.ybtn:hover {
   color: #24232b;
   background-color: #b59964;
-}
-.rn_btn {
-  padding: 0.5vw 1vw;
-  border-radius: 15vw;
-  color: #b59964;
-  border: #b59964 solid 1px;
-  background-color: #24232b;
-  display: flex;
-  align-items: center;
-}
-.rn_btn:hover {
-  background-color: #b59964;
-  color: #24232b;
 }
 
 /* 頁面控制 */
 .page_container {
-  width: 80%;
+  width: 80vw;
   margin: auto;
-  margin-top: 5vw;
+  margin-top: 6rem;
 }
 
 /* 液體按鈕 */
@@ -283,7 +292,7 @@ h1 {
 .btn_lq span {
   display: block;
   position: relative;
-  color: #c0b49c;
+  color: #b59964;
   font-size: 2rem;
   letter-spacing: 2px;
   z-index: 1;

@@ -1,83 +1,29 @@
 <div class="loader">
-          <div class="drops">
-            <div class="drop1"></div>
-            <div class="drop2"></div>
-          </div>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-          <defs>
-            <filter id="liquid">
-              <feGaussianBlur
-                in="SourceGraphic"
-                stdDeviation="10"
-                result="blur"
-              />
-              <feColorMatrix
-                in="blur"
-                mode="matrix"
-                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                result="liquid"
-              />
-            </filter>
-          </defs>
-        </svg>
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+  <div class="drops">
+    <div class="drop1"></div>
+    <div class="drop2"></div>
+  </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="liquid">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix
+        in="blur"
+        mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        result="liquid"
+      />
+    </filter>
+  </defs>
+</svg>
 
-@keyframes drop {
-  0% {
-    bottom: 0px;
-    opacity: 1;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    bottom: -200px;
-  }
-}
-.drops {
-  -webkit-filter: url("#liquid");
-  filter: url("#liquid");
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  opacity: 0;
-  animation: fade-in 0.1s linear 0.4s forwards;
-}
-
-.drop1,
-.drop2 {
-  width: 21px;
-  height: 24px;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: #6f4444;
-}
-
-.drop1 {
-  width: 30px;
-  height: 16px;
-  bottom: 2px;
-  border-radius: 0;
-}
-
-.drop2 {
-  animation: drop 1.3s cubic-bezier(1, 0.19, 0.66, 0.12) 0.5s infinite;
-}
+@keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } } @keyframes drop {
+0% { bottom: 0px; opacity: 1; } 80% { opacity: 1; } 100% { opacity: 1; bottom:
+-200px; } } .drops { -webkit-filter: url("#liquid"); filter: url("#liquid");
+position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: 1; opacity:
+0; animation: fade-in 0.1s linear 0.4s forwards; } .drop1, .drop2 { width: 21px;
+height: 24px; border-radius: 50%; position: absolute; left: 0; right: 0; bottom:
+0; margin: auto; background-color: #6f4444; } .drop1 { width: 30px; height:
+16px; bottom: 2px; border-radius: 0; } .drop2 { animation: drop 1.3s
+cubic-bezier(1, 0.19, 0.66, 0.12) 0.5s infinite; }
