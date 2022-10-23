@@ -16,21 +16,68 @@
 /* .card_container */
 .card_container {
   width: 25%;
-  height: 70vh;
-  margin: 8rem;
+  height: 75vh;
+  margin: 6rem 8rem;
 }
+
+/* .card_container h3 */
 .card_container h3 {
-  height: 10%;
-  width: 100%;
   text-align: center;
-  /* padding: 2rem 0; */
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  font-style: italic;
+  color: #fff;
+  width: 80%;
+  margin-left: 10%;
+  padding: 5px 0;
+  border: 0.4rem solid #fff;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  animation: flicker 1.5s infinite alternate;
+}
+
+:root {
+  /* Set neon color */
+  --neon-text-color: #f40;
+  --neon-border-color: #08f;
+}
+
+/* Animate neon flicker */
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
+      0 0 2rem var(--neon-text-color), 0 0 4rem var(--neon-text-color),
+      0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
+      0 0 10rem var(--neon-text-color);
+
+    box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+      0 0 2rem var(--neon-border-color), inset 0 0 2rem var(--neon-border-color),
+      0 0 4rem var(--neon-border-color), inset 0 0 4rem var(--neon-border-color);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    box-shadow: none;
+  }
 }
 
 /* .lab_card */
 .lab_card {
   width: 100%;
-  height: 90%;
+  height: 65vh;
+  margin-top: 3vh;
   border-radius: 24px;
+  box-shadow: 0 0 1vw #444;
 
   transform-style: preserve-3d;
   transition: 0.6s 0.1s;
@@ -45,7 +92,7 @@
 /* hover and focus-within states */
 .card_container:hover .lab_card {
   transform: rotateY(180deg);
-  box-shadow: 0 0 1vw #555;
+  box-shadow: 0 0 1vw #999;
 }
 
 /* .card-... */
@@ -72,6 +119,9 @@
   z-index: 2;
 }
 
+.card_container img {
+  object-fit: cover;
+}
 /* .card_back */
 .card_back {
   transform: rotateY(180deg);
@@ -81,12 +131,13 @@
 /* figure, .card_img */
 
 .card_img {
-  position: absolute;
   top: 0;
   left: 0;
 
   width: 100%;
   height: 100%;
+
+  position: absolute;
 }
 
 /* img */
@@ -108,4 +159,75 @@ img {
 .button {
   width: 100%;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  .card_container {
+    width: 100%;
+    margin: 15%;
+  }
+  .card_container:nth-child(2) {
+    padding-right: 15%;
+  }
+  .card_container a {
+    width: 100%;
+  }
+  .lab_card {
+    width: 70vw;
+    height: 50vh;
+    position: relative;
+  }
+  .card_front {
+    display: none;
+  }
+  .card_back {
+    transform: rotateY(0deg);
+  }
+  .card_container:hover .lab_card {
+    transform: none;
+  }
+  /* 箭頭 */
+  .card_container:nth-child(1) .lab_card::after {
+    content: "-->";
+    border: #f40 solid 3px;
+    z-index: 3;
+    position: absolute;
+    bottom: -8vh;
+    right: -10%;
+
+    font-weight: 400;
+    letter-spacing: -4px;
+    font-size: 3rem;
+    /* font-style: italic; */
+    color: #fff;
+    width: 45%;
+    border: 0.4rem solid #fff;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    animation: flicker 1.5s infinite alternate;
+  }
+  .card_container:nth-child(2) .lab_card::after {
+    content: "<--";
+    border: #f40 solid 3px;
+    z-index: 3;
+    position: absolute;
+    bottom: -8vh;
+    left: -10%;
+
+    font-weight: 400;
+    letter-spacing: -4px;
+    font-size: 3rem;
+    /* font-style: italic; */
+    color: #fff;
+    width: 45%;
+    border: 0.4rem solid #fff;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    animation: flicker 1.5s infinite alternate;
+  }
 }

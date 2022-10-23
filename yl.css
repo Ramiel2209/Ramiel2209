@@ -1,0 +1,74 @@
+.yl {
+  margin: auto;
+  margin-top: 7vw;
+  width: 80%;
+}
+
+.lab {
+  margin-top: 3vw;
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  grid-template-rows: 0.1fr 0.9fr;
+  height: 69vh;
+}
+.lab_img {
+  box-shadow: 0 0 2vw #555;
+  /* background-color: #d3d3ca; */
+  border-radius: 5%;
+  grid-column: 1/2;
+  grid-row: 1/3;
+
+  display: flex;
+}
+.lab_img img {
+  width: 100%;
+  object-fit: contain;
+}
+.lab_nav {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.lab_nav ul {
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+}
+.lab_nav ul li {
+  color: #b59964;
+  border: #b59964 solid 2px;
+  border-radius: 40px;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+.lab_nav ul li:hover {
+  background-color: #b59964;
+  color: #24232b;
+}
+.lab_nav ul li:nth-child(1) {
+  background-color: #b59964;
+  color: #24232b;
+}
+.lab_element {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: 55vh;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.table_element_img {
+  width: 15vw;
+  height: 15vw;
+}
+.table_element_img img {
+  width: 100%;
+}
+.table_element_img:hover img {
+  transform: scale(1.1);
+}

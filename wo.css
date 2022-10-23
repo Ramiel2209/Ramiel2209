@@ -1,0 +1,137 @@
+header {
+  height: 200vh;
+}
+
+.container {
+  /* hide fixed overflow contents */
+  clip: rect(0, auto, auto, 0);
+
+  /* does not work if overflow = visible */
+  overflow: hidden;
+
+  /* only works with absolute positioning */
+  position: absolute;
+
+  /* Make sure containers are full-width and height */
+  height: 100vh;
+  left: 0;
+  width: 100%;
+
+  /* safari hack */
+  -webkit-mask-image: -webkit-linear-gradient(top, #c0b49c 0%, #c0b49c 100%);
+}
+
+.container_solid {
+  background: #c0b49c;
+
+  /* position this container at the top of its parent element */
+  top: 0;
+}
+
+.title_wrapper {
+  position: fixed;
+  display: block;
+  margin: auto;
+  width: 100%;
+  /* center the text wrapper vertically */
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.title_wrapper h2 {
+  text-align: center;
+  font-size: 64px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+}
+
+.container_solid .title_wrapper h2 {
+  /* the text background */
+  background: url(./album/bar/wo_main.jpg);
+  background-size: 100vw auto;
+  background-position: center;
+
+  /* clip the text is possible */
+  text-decoration-color: #c0b49c;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* fallback text color */
+  color: black;
+}
+
+.container_image {
+  /* Grab a free image from unsplash */
+  background-image: url(./album/bar/wo_main.jpg);
+  background-size: 100vw auto;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* position the second container below the first container */
+  top: 100vh;
+}
+
+.container_image .title_wrapper h2 {
+  color: #c0b49c;
+}
+
+section {
+  margin: auto;
+  width: 80%;
+  background: url(./album/other/wall.jpg);
+  padding: 8rem 4rem 3rem 2rem;
+}
+.schedule {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+}
+.schedule:nth-child(2),
+.schedule:nth-child(3) {
+  margin-top: 7rem;
+}
+.schedule .month {
+  color: #b59964;
+
+  grid-column: 1;
+  font-size: 7rem;
+  text-align: end;
+
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10rem;
+}
+.schedule .event {
+  grid-column: 2;
+  display: flex;
+  margin-bottom: 4rem;
+  border-bottom: #c0b49c 1px solid;
+  padding-bottom: 4rem;
+}
+.schedule .date {
+  color: #b59964;
+
+  font-size: 7rem;
+  width: 13rem;
+}
+.schedule .txt p {
+  width: 40vw;
+  margin-top: 1rem;
+}
+.event a {
+  height: fit-content;
+  margin-top: auto;
+  margin-left: 3vw;
+}
+.event .ybtn {
+  width: 18rem;
+  text-align: center;
+}
+
+.au {
+  margin-top: 10rem;
+}
