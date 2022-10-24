@@ -1,4 +1,5 @@
-@media screen and (max-width: 768px) {
+/* mobile */
+@media screen and (max-width: 767px) {
   .ol {
     width: 100vw;
   }
@@ -83,6 +84,7 @@
     border-radius: 5rem;
     font-size: 2.5rem;
   }
+
   .wo_news {
     margin-top: 3rem;
   }
@@ -113,7 +115,6 @@
   .rt_form .input input {
     display: flex;
     width: 100%;
-    line-height: 4rem;
   }
   .input select {
     display: flex;
@@ -131,5 +132,109 @@
 
   .map iframe {
     height: 30vh;
+  }
+}
+
+/* tab-row */
+@media screen and (max-width: 1025px) {
+  .ol {
+    width: 100vw;
+  }
+  .ol .page_title {
+    margin-left: 10%;
+  }
+  .ol_grid {
+    display: flex;
+    height: 50rem;
+    margin-top: 6rem;
+    overflow-x: auto;
+    padding: 0;
+    width: 100%;
+  }
+  .ol_card {
+    margin: 3rem;
+  }
+  .ol_card:nth-child(6) {
+    margin-right: 0;
+  }
+  .ol_card:nth-child(n + 4):nth-child(-n + 6) {
+    display: inline-block;
+  }
+  .ol_card:nth-child(6) {
+    padding-right: 3rem;
+  }
+  .ol_card_img {
+    width: 25rem;
+    height: 35rem;
+  }
+  .ol_card_img img {
+    width: 100%;
+    z-index: 3;
+  }
+  .yl {
+    width: 100%;
+  }
+  .yl .page_title {
+    padding-left: 10%;
+  }
+  .yl_col {
+    padding: 0;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+  }
+  .video_yl {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    mix-blend-mode: overlay;
+  }
+  .yl_col video {
+    width: 100vw;
+    border-radius: 0;
+    object-fit: cover;
+  }
+  .yl_container {
+    position: absolute;
+    height: 70vh;
+    left: 15vw;
+    top: 6vh;
+  }
+  .yl_btn {
+    margin: 2rem 0 0 0;
+    justify-content: center;
+  }
+  .yl_btn .liquid {
+    display: none;
+  }
+  .yl_btn .btn_lq {
+    color: #b59964;
+    border: #8a0f3a solid 1px;
+    background: linear-gradient(to bottom, #d00049 0%, #8a0f3a 70%);
+    border-radius: 5rem;
+    font-size: 2.5rem;
+  }
+
+  .rt_sub input {
+    font-size: 1.5rem;
+  }
+}
+
+/* tab-column */
+@media screen and (max-width: 1367px) {
+  .yl_btn .liquid {
+    display: none;
+  }
+  .yl_btn .btn_lq {
+    color: #b59964;
+    border: #8a0f3a solid 1px;
+    background: linear-gradient(to bottom, #d00049 0%, #8a0f3a 70%);
+    border-radius: 5rem;
+    font-size: 2.5rem;
+  }
+  .wo_btn span {
+    font-size: 1.5rem;
+  }
+  .rt_form .input input {
+    display: flex;
   }
 }
