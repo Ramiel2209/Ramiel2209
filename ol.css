@@ -73,9 +73,6 @@
   padding: 0.5rem;
 }
 .drinks_container .ybtn a {
-  color: #b59964;
-}
-.drinks_container .ybtn:hover a {
   color: #24232b;
 }
 
@@ -117,7 +114,7 @@
   box-shadow: 0 0 1vw #555;
 }
 .ywl_card_img {
-  width: 10vw;
+  width: 12vw;
   height: 12vw;
   overflow: hidden;
   border-radius: 5%;
@@ -133,11 +130,21 @@
   transform: scale(1.1);
 }
 .ywl_btn {
-  margin-top: 1vw;
+  margin: 1rem auto 1rem 0;
 }
 .ywl_btn a {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
-.ywl_btn_ac:hover {
+.ybtn:hover {
   box-shadow: 0 0 1vw #777;
+}
+
+.ywl_card h3 {
+  font-size: 2.5rem;
+}
+.ywl_card p {
+  font-size: 1.5rem;
+}
+.ywl_card h4 {
+  font-size: 2rem;
 }

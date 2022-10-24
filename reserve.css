@@ -1,0 +1,168 @@
+a:hover {
+  text-decoration: none;
+}
+.main-nav li:nth-child(3) a {
+  color: #8a0f3a;
+}
+.main-nav li:nth-child(3) a:hover:before {
+  display: none;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 100;
+}
+.container-fluid {
+  margin-top: 3rem;
+}
+.page_title {
+  margin: 12rem 0 0 10%;
+}
+.card {
+  box-shadow: 0px 4px 8px 0px #555;
+}
+.card-body {
+  background-color: #c0b49c;
+}
+.card-header {
+  background: url(./album/other/wall.jpg);
+}
+.container-fluid input {
+  padding: 10px 20px !important;
+  border: 1px solid #000 !important;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #24232b !important;
+  color: #c0b49c !important;
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: 180px;
+}
+
+.container-fluid input:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #8a0f3a;
+  outline-width: 0;
+}
+
+.container-fluid ::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+::-ms-input-placeholder {
+  color: #fff;
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0;
+}
+
+.datepicker {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: none;
+  padding: 10px !important;
+}
+
+.datepicker-dropdown:after {
+  border-bottom: 6px solid #000;
+}
+
+thead tr:nth-child(3) th {
+  color: #fff !important;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.dow,
+.old-day,
+.day,
+.new-day {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 0px !important;
+}
+
+.old-day:hover,
+.day:hover,
+.new-day:hover,
+.month:hover,
+.year:hover,
+.decade:hover,
+.century:hover {
+  border-radius: 6px !important;
+  background-color: #eee;
+  color: #000;
+}
+
+.disabled {
+  color: #616161 !important;
+}
+
+.prev,
+.next,
+.datepicker-switch {
+  border-radius: 0 !important;
+  padding: 20px 10px !important;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+.prev:hover,
+.next:hover,
+.datepicker-switch:hover {
+  background-color: inherit !important;
+  opacity: 1;
+}
+
+.cell {
+  border-radius: 3px;
+  border: 1px solid #24232b;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: #24232b;
+  font-size: 2rem;
+}
+
+.cell:hover {
+  border: 1px solid #8a0f3a;
+}
+
+.cell.select {
+  background-color: #8a0f3a;
+  color: #fff;
+}
+
+.fa-calendar {
+  color: #fff;
+  font-size: 30px;
+  padding-top: 8px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.rt_sub {
+  display: flex;
+  justify-content: flex-end;
+}
+.rt_sub input {
+  font-size: 2rem;
+  color: #24232b !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 0.5rem 1rem !important;
+}

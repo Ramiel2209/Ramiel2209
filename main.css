@@ -9,6 +9,7 @@ html {
 body {
   background-color: #24232b;
 }
+
 /* 字體 */
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -46,7 +47,13 @@ img {
   border-radius: 3%;
 }
 /* 照片 */
-
+/* input */
+input {
+  -webkit-appearance: none; /* Safari & Chrome*/
+  -moz-appearance: none; /* FireFox */
+  appearance: none;
+}
+/* input */
 .header {
   top: 0;
   display: flex;
@@ -151,6 +158,9 @@ h1 {
   display: block;
   margin-bottom: 1vw;
 }
+.au_imf .submit {
+  color: #24232b;
+}
 .au_email {
   width: 90%;
   height: 4rem;
@@ -159,15 +169,33 @@ h1 {
 
 /* 按鈕 */
 .ybtn {
-  color: #b59964;
+  color: #24232b;
+  background: linear-gradient(to bottom, #d1bf9f 20%, #b59964 60%);
   border: #b59964 solid 2px;
   border-radius: 5rem;
   font-size: 2.5rem;
   padding: 0.5rem 1rem;
+  box-shadow: 0 0 1vw #555;
 }
 .ybtn:hover {
   color: #24232b;
   background-color: #b59964;
+}
+.submit:hover {
+  box-shadow: 0 0 1vw #888;
+}
+.pbtn {
+  color: #8a0f3a;
+  border: #8a0f3a solid 2px;
+  border-radius: 5rem;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 1vw #333;
+}
+.pbtn:hover {
+  color: #24232b;
+  background: linear-gradient(to bottom, #d00049 0%, #8a0f3a 70%);
+  box-shadow: 0 0 1vw #555;
 }
 
 /* 頁面控制 */
@@ -412,4 +440,17 @@ h1 {
     width: fit-content;
     background-color: transparent;
   }
+}
+
+/* 淡入 */
+.slideIn {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-50px);
+}
+.active {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
+  transition: 2s ease-in-out;
 }

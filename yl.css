@@ -1,3 +1,10 @@
+.main-nav li:nth-child(1) a {
+  color: #8a0f3a;
+}
+.main-nav li:nth-child(1) a:hover:before {
+  display: none;
+}
+
 .yl {
   margin: auto;
   margin-top: 7vw;

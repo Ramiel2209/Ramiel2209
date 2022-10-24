@@ -1,3 +1,10 @@
+.main-nav li:nth-child(2) a {
+  color: #8a0f3a;
+}
+.main-nav li:nth-child(2) a:hover:before {
+  display: none;
+}
+
 header {
   height: 200vh;
 }
@@ -127,7 +134,7 @@ section {
   margin-top: auto;
   margin-left: 3vw;
 }
-.event .ybtn {
+.event .pbtn {
   width: 18rem;
   text-align: center;
 }

@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+.main-nav li:nth-child(1) a {
+  color: #8a0f3a;
+}
+.main-nav li:nth-child(1) a:hover:before {
+  display: none;
+}
+
 .container {
   margin-top: 8rem;
   width: 100%;
@@ -230,4 +237,8 @@ img {
     text-transform: uppercase;
     animation: flicker 1.5s infinite alternate;
   }
+}
+
+.au img {
+  border-radius: 0;
 }

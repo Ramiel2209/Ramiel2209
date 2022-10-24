@@ -8,7 +8,7 @@
   height: 100vh;
   width: 100%;
   object-fit: cover;
-  object-position: 40%;
+  object-position: 45%;
 }
 
 /* ol */
@@ -192,22 +192,29 @@
   height: 4rem;
   margin-top: 3rem;
   line-height: 2.5rem;
-  font-size: 2vw;
+  font-size: 2rem;
   color: #b59964;
   border: #b59964 solid 1px;
   text-align: center;
   background-color: #24232b;
+}
+.input input {
+  border-radius: 5px;
+}
+.rt_form .submit {
+  color: #24232b;
 }
 .rt_form select {
   display: inline-block;
   width: 25%;
   height: 4rem;
   margin-top: 3rem;
-  font-size: 2vw;
+  font-size: 2rem;
   color: #b59964;
   border: #b59964 solid 1px;
   text-align: center;
   background-color: #24232b;
+  border-radius: 5px;
 }
 .rt_sub {
   margin-top: 1rem;

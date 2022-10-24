@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drunk Lab Cocktail Bar</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="menu-switch" />
+    <nav class="header">
+      <div class="logo">
+        <a href="index.html"><h1>Drunk Lab Cocktail Bar</h1></a>
+      </div>
+      <label for="menu-switch" class="hb">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="main-nav">
+        <li>
+          <a href="lab.html">Lab</a>
+        </li>
+        <li><a href="what's_on.html">What's On</a></li>
+        <li><a href="reserve.html">Reserve</a></li>
+        <li>
+          <a href="signin.html"
+            ><img src="./album/other/user.png" alt="user.png" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./album/other/shopping-cart.png" alt="cart.png" />
+          </a>
+        </li>
+        <li><a href="signin.html">Membership</a></li>
+        <li><a href="#">Shopping-Cart</a></li>
+      </ul>
+    </nav>
+
+    <div class="signin">
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <h2>Create Account</h2>
+            <div class="social-container">
+              <a href="#" class="social"
+                ><div class="sc">
+                  <img src="./album/other/facebook.png" alt="" /></div
+              ></a>
+              <a href="#" class="social"
+                ><div class="sc">
+                  <img src="./album/other/ig.png" alt="" /></div
+              ></a>
+              <a href="#" class="social"
+                ><div class="sc">
+                  <img src="./album/other/twitter.png" alt="" /></div
+              ></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h2>Sign in</h2>
+            <div class="social-container">
+              <a href="#" class="social"
+                ><div class="sc">
+                  <img src="./album/other/facebook.png" alt="" /></div
+              ></a>
+              <a href="#" class="social"
+                ><div class="sc">
+                  <img src="./album/other/ig.png" alt="" /></div
+              ></a>
+              <a href="#" class="social"
+                ><div class="sc">
+                  <img src="./album/other/twitter.png" alt="" /></div
+              ></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button>Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h2>Welcome Back!</h2>
+              <p>
+                To keep connected with us please login with your personal info
+              </p>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h2>Hello, Friend!</h2>
+              <p>Enter your personal details and start journey with us</p>
+              <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const signUpButton = document.getElementById("signUp");
+      const signInButton = document.getElementById("signIn");
+      const container = document.getElementById("container");
+
+      signUpButton.addEventListener("click", () => {
+        container.classList.add("right-panel-active");
+      });
+
+      signInButton.addEventListener("click", () => {
+        container.classList.remove("right-panel-active");
+      });
+    </script>
+
+    <div class="au page_container">
+      <hgroup>
+        <h2 class="page_title_main">About us</h2>
+      </hgroup>
+      <article class="au_imf">
+        <div class="au_imf_txt">
+          <h4>Contact</h4>
+          <p>
+            <a>123-456-789 <br /></a>
+            drunklab@gmail.com
+          </p>
+          <div class="au_sm">
+            <a href="#">
+              <img src="./album/other/sc.png" alt="sc.png" />
+            </a>
+          </div>
+        </div>
+
+        <div class="au_imf_txt">
+          <h4>Get Updates on Special Events</h4>
+          <form>
+            <input type="email" placeholder=" Your Email" class="au_email" />
+            <input type="submit" value="Subscribe" class="ybtn submit" />
+          </form>
+        </div>
+        <div class="au_imf_txt">
+          <h4>Opening Hours</h4>
+          <p>
+            Sun - Thu : 4pm-1am <br />
+            Fri - Sun : 3pm - 2am <br />
+            &nbsp; <br />
+            999 Terry Francois <br />
+            St. San Francisco, CA 12345
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
