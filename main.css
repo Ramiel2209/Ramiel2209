@@ -504,5 +504,5 @@ h1 {
   opacity: 1;
   filter: blur(0px);
   transform: translateY(0px);
-  transition: 2s ease-in-out;
+  transition: 0.7s ease-in-out;
 }

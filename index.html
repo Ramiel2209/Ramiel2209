@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="sm_index.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="jquery-3.6.1.js"></script>
   </head>
   <body>
     <input type="checkbox" id="menu-switch" />
@@ -248,49 +248,60 @@
         <h2>What's On</h2>
       </hgroup>
       <section class="wo_news">
-        <div data-aos="fade-up">
-          <article class="wo_news_art">
-            <img src="./album/wo/0happy_hour.jpg" alt="0happy_hour.jpg" />
-            <section>
-              <h4>Happy Hour</h4>
-              <h3>20% off on All Cocktails</h3>
-              <p>Monday to Thursday</p>
-              <p>5pm - 7pm</p>
-              <div class="wo_btn">
-                <a href="what's_on.html" class="btn_lq">
-                  <span>More News !</span>
-                  <div class="liquid"></div>
-                </a>
-              </div>
-            </section>
-          </article>
-        </div>
+        <article class="wo_news_art slideIn">
+          <img src="./album/wo/0happy_hour.jpg" alt="0happy_hour.jpg" />
+          <section>
+            <h4>Happy Hour</h4>
+            <h3>20% off on All Cocktails</h3>
+            <p>Monday to Thursday</p>
+            <p>5pm - 7pm</p>
+            <div class="wo_btn">
+              <a href="what's_on.html" class="btn_lq">
+                <span>More News !</span>
+                <div class="liquid"></div>
+              </a>
+            </div>
+          </section>
+        </article>
 
-        <div data-aos="fade-up">
-          <article class="wo_news_art wo_news_art2">
-            <img
-              src="./album/wo/friday_night_live.jpg"
-              alt="friday_night_live.jpg"
-            />
-            <section>
-              <h4>Justin Bryant</h4>
-              <h3>Friday Night Live</h3>
-              <p>October 23, 2022</p>
-              <p>8pm - 11pm</p>
-              <div class="wo_btn">
-                <a href="what's_on.html" class="btn_lq">
-                  <span>More News !</span>
-                  <div class="liquid"></div>
-                </a>
-              </div>
-            </section>
-          </article>
-        </div>
+        <article class="wo_news_art wo_news_art2 slideIn">
+          <img
+            src="./album/wo/friday_night_live.jpg"
+            alt="friday_night_live.jpg"
+          />
+          <section>
+            <h4>Justin Bryant</h4>
+            <h3>Friday Night Live</h3>
+            <p>October 23, 2022</p>
+            <p>8pm - 11pm</p>
+            <div class="wo_btn">
+              <a href="what's_on.html" class="btn_lq">
+                <span>More News !</span>
+                <div class="liquid"></div>
+              </a>
+            </div>
+          </section>
+        </article>
       </section>
     </div>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
-      AOS.init();
+      window.addEventListener("load", function () {
+        // 淡入視口
+        let oth = $(window).innerHeight();
+        $(window).scroll(function () {
+          let sct = $(this).scrollTop();
+          let all = sct + oth;
+          $(".slideIn").each(function () {
+            let sld = $(this).offset().top;
+            if (all > sld) {
+              $(this).addClass("active");
+            } else {
+              $(this).removeClass("active");
+            }
+          });
+        });
+      });
     </script>
 
     <div class="rt page_container">
